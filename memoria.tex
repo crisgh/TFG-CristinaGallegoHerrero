@@ -125,9 +125,9 @@
 \usepackage[
     backend=biber,
     style=numeric,
-    sorting=nty
+    sorting=none
     ]{biblatex}
-\addbibresource{memoria.bib}
+\addbibresource{refs.bib}
 \DeclareFieldFormat{url}{\mkbibacro{URL}\addcolon\nobreakspace\url{#1}}
 %\usepackage[nottoc, notlot, notlof, notindex]{tocbibind} %% Opciones de índice
 
@@ -278,26 +278,26 @@
 \vspace{3cm}
 
 \Large 
-TITULACIÓN EN MAYÚSCULAS
+INGENIERÍA EN TECNOLOGÍAS DE LA TELECOMUNICACIÓN 
 
 \vspace{0.4cm}
 
 \large
-Curso Académico 20XX/20XX
+Curso Académico 2021/2022
 
 \vspace{0.8cm}
 
-Trabajo Fin de Grado/Máster
+Trabajo Fin de Grado
 
 \vspace{2cm}
 
-\LARGE UN TÍTULO DE PROYECTO LARGO\\
-EN DOS LÍNEAS
+\LARGE VISUALIZACIÓN Y ANÁLISIS\\
+DE DATOS 
 \vspace{3cm}
 
 \large
-Autor/a : Nombre del Alumno/a \\
-Tutor/a : Dr. Nombre del Profesor/a
+Autora : María Cristina Gallego Herrero \\
+Tutor : Dr. Felipe Ortega 
 \end{center}
 \end{titlepage}
 
@@ -323,13 +323,13 @@ Título del Trabajo con Letras Capitales para Sustantivos y Adjetivos
 
 \vspace{1cm}
 \large
-\textbf{Autor/a :} Nombre del Alumno/a  \\
-\textbf{Tutor/a :} Dr. Nombre del profesor/a
+\textbf{Autora :} María Cristina Gallego Herrero  \\
+\textbf{Tutor :} Dr. Felipe Ortega 
 
 \end{center}
 
 \vspace{1cm}
-La defensa del presente Proyecto Fin de Grado/Máster se realizó el día 3\qquad$\;\,$ de
+La defensa del presente Proyecto Fin de Grado se realiza el día 3\qquad$\;\,$ de
 \qquad\qquad\qquad\qquad \newline de 20XX, siendo calificada por el siguiente tribunal:
 
 
@@ -361,24 +361,24 @@ Móstoles/Fuenlabrada, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 20XX
 \chapter*{}
 %\pagenumbering{Roman} % para comenzar la numeración de paginas en numeros romanos
 \begin{flushright}
-\textit{Aquí normalmente \\
-se inserta una dedicatoria corta \\}
+\textit{Agradecer a la vida, porque a pesar de todo he tenido suerte. \\
+ Suerte por tener a todas las personas que tengo a mi lado.\\}
 \end{flushright}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Agradecimientos
 
 \chapter*{Agradecimientos}
-%\addcontentsline{toc}{chapter}{Agradecimientos} % si queremos que aparezca en el índice
+\addcontentsline{toc}{chapter}{Agradecimientos} % si queremos que aparezca en el índice
 \markboth{AGRADECIMIENTOS}{AGRADECIMIENTOS} % encabezado 
 
-Aquí vienen los agradecimientos\ldots
+En primer lugar quiero agradecérselo a mis padres, mi hermano y mi cuñada, pues sin ellos y sin su esfuerzo no hubiese sido capaz de cerrar este ciclo. Muchos han sido los días que habéis estado a mi lado, aguantando mis nervios y mis miedos. Habéis sido el consuelo y el apoyo que necesitaba en los momentos más duros, en los que un simple gesto vuestro hacía levantarme. Sois y seréis mi mejor ejemplo a seguir, gracias.
 
-Hay más espacio para explayarse y explicar a quién agradeces su apoyo o ayuda para
-haber acabado el proyecto: familia, pareja, amigos, compañeros de clase\ldots
+Gracias a mis amigas, mis niñas desde que teníamos 3 años. Hemos crecido, vivido los mejores y peores momentos y, sobre todo, disfrutado cada etapa de nuestras vidas. No puedo ser más afortunada teniéndoos.
 
-También hay quien, en algunos casos, hasta agradecer a su tutor o tutores del proyecto
-la ayuda prestada\ldots
+A mi pareja, gracias por tu paciencia y por acompañarme. 
+
+Por último, quiero hacer mención especial a mi tutor, Felipe, por darme ánimos para terminar el \acrshort{tfg}. Pero, sobre todo, gracias por ser paciente, por entender y comprender mi situación durante tantos años.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen
@@ -387,17 +387,29 @@ la ayuda prestada\ldots
 %\addcontentsline{toc}{chapter}{Resumen} % si queremos que aparezca en el índice
 \markboth{RESUMEN}{RESUMEN} % encabezado
 
-Aquí viene un resumen del proyecto.
-Ha de constar de tres o cuatro párrafos, donde se presente de manera clara y concisa de qué va el proyecto. 
-Han de quedar respondidas las siguientes preguntas:
+Hoy en día, la mayor parte de las aplicaciones y sistemas de comunicación presentan, trasfieren y almacenan grandes cantidades de información en tiempo real y son guardadas para su análisis tanto presente como futuro. 
+Para poder dar un uso eficiente es necesario almacenar estos de manera ordenada y si es posible poder visualizar y procesar estos datos de manera sencilla, visual e intuitiva.
 
-\begin{itemize}
-  \item ¿De qué va este proyecto? ¿Cuál es su objetivo principal?
-  \item ¿Cómo se ha realizado? ¿Qué tecnologías están involucradas?
-  \item ¿En qué contexto se ha realizado el proyecto? ¿Es un proyecto dentro de un marco general?
-\end{itemize}
+Este análisis permite detectar errores, observación y análisis de las variaciones en el tiempo y poder obtener análisis estadísticos o, incluso, realizar predicciones sobre el comportamiento. 
 
-Lo mejor es escribir el resumen al final.
+Este Trabajo de Fin de Grado consiste en la recopilación y análisis de datos mediante el uso de varias tecnologías de exploración y administración de datos. En este proyecto, se ha trabajado con Stack Exchange, que se trata de un conjunto de datos ya extraídos que contienen la información de Stack Overflow y otras comunidades similares. Estos datos se almacenan en una base de datos para, posteriormente, visualizarlos en las herramientas gráficas que vamos a comparar durante el proyecto y sacar conclusiones dependiendo de diferentes criterios de comparación.
+
+Hemos decidido centrarnos en dos herramientas principales: Grafana y Graphite para análisis y visualización de los datos y Tableau, que realiza tanto la visualización, limpieza y análisis de manera directa.
+
+El objetivo principal de este Trabajo de Fin de Grado es tener una comparativa de los diferentes sistemas aplicando diferentes criterios de comparación.
+
+
+
+%%Ha de constar de tres o cuatro párrafos, donde se presente de manera clara y concisa de qué va el proyecto. 
+%%Han de quedar respondidas las siguientes preguntas:
+
+%\begin{itemize}
+  %\item ¿De qué va este proyecto? ¿Cuál es su objetivo principal?
+  %\item ¿Cómo se ha realizado? ¿Qué tecnologías están involucradas?
+  %\item ¿En qué contexto se ha realizado el proyecto? ¿Es un proyecto dentro de un marco general?
+%\end{itemize}
+%
+%Lo mejor es escribir el resumen al final.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen en inglés
@@ -450,81 +462,31 @@ As it is the translation of the ``Resumen'', which is supposed to be written at 
 \chapter{Introducción}
 \label{sec:intro}
 \pagenumbering{arabic} % para empezar la numeración de página con números
+El análisis de datos trata de obtener conclusiones significativas sobre los datos que se analizan. Para ello se aplican técnicas estadísticas y lógicas, modulación de la estructura de los datos y la representación de estos mediante imágenes, tablas y gráficos.
+%% Es *** increible lo que se usa en todos los ambitos ***
 
-En este capítulo se introduce el proyecto.
-Debería tener información general sobre el mismo, dando la información sobre el contexto en el que se ha desarrollado.
+%%Antes de comenzar con el análisis de los datos, existe una etapa que trata de identificar y clasificar. Este proceso consiste en definir el alcance para tomar las especificaciones de los requisitos de los datos, su recolección  y procesamiento. Se necesita identificar los datos relevantes para su análisis y derivar una conclusión precisa.\newline 
+Los siguientes pasos ayudan a identificar y clasificar los datos para su análisis: 
+ \begin{itemize}
+        \item Definición y especificación de los requisitos de los datos.
+        \item Recolección de datos.
+        \item Procesamiento de datos.
+        \item Análisis de datos.
+        \item Interpretación de los resultados
+    \end{itemize}
 
-No te olvides de echarle un ojo a la página con los cinco errores de escritura más frecuentes\footnote{\url{http://www.tallerdeescritores.com/errores-de-escritura-frecuentes}}.
 
-Aconsejo a todo el mundo que mire y se inspire en memorias pasadas.
-Las memorias de los proyectos que he llevado yo están (casi) todas almacenadas en mi web del GSyC\footnote{\url{https://gsyc.urjc.es/~grex/pfcs/}}.
 
-\section{Sección}
+%En este capítulo se introduce el proyecto. bería tener información general sobre el mismo, dando la información sobre el contexto en el que se ha desarrollado.No te olvides de echarle un ojo a la página con los cinco errores de escritura más frecuentes\footnote{\url{http://www.tallerdeescritores.com/errores-de-escritura-frecuentes}}.Aconsejo a todo el mundo que mire y se inspire en memorias pasadas.Las memorias de los proyectos que he llevado yo están (casi) todas almacenadas en mi web del GSyC\footnote{\url{https://gsyc.urjc.es/~grex/pfcs/}}.
+%%
+
+\section{Planteamiento del problema}
 \label{sec:seccion}
 
-Esto es una sección, que es una estructura menor que un capítulo. 
+Hoy en día la visualización de la información tiene un valor muy importante, ya que es una manera sencilla de llegar a todos los públicos. Actualmente, todas las empresas de cualquier ámbito utilizan alguna herramienta de análisis que les permita visualizar y analizar los datos de manera centralizada. 
 
-Por cierto, a veces me comentáis que no os compila por las tildes.
-Eso es un problema de codificación.
-Al guardar el archivo, guardad la codificación de ``ISO-Latin-1'' a ``UTF-8'' (o viceversa) y funcionará.
+Existen múltiples herramientas que permiten esta visualización y análisis, durante este proyecto, se realiza la comparación basándonos en diferentes criterios de dos herramientas que actualmente se encuentran en gran parte del sector. 
 
-\subsection{Estilo}
-\label{subsec:estilo}
-
-Recomiendo leer los consejos prácticos sobre escribir documentos científicos en \LaTeX \ de Diomidis Spinellis\footnote{\url{https://github.com/dspinellis/latex-advice}}.
-
-Lee sobre el uso de las comas\footnote{\url{http://narrativabreve.com/2015/02/opiniones-de-un-corrector-de-estilo-11-recetas-para-escribir-correctamente-la-coma.html}}. 
-Las comas en español no se ponen al tuntún.
-Y nunca, nunca entre el sujeto y el predicado (p.ej. en ``Yo, hago el TFG'' sobre la coma).
-La coma no debe separar el sujeto del predicado en una oración, pues se cortaría la secuencia natural del discurso.
-No se considera apropiado el uso de la llamada coma respiratoria o \emph{coma criminal}.
-Solamente se suele escribir una coma para marcar el lugar que queda cuando omitimos el verbo de una oración, pero es un caso que se da de manera muy infrecuente al escribir un texto científico (p.ej. ``El Real Madrid, campeón de Europa'').
-
-A continuación, viene una figura, la Figura~\ref{figura:foro_hilos}. 
-Observarás que el texto dentro de la referencia es el identificador de la figura (que se corresponden con el ``label'' dentro de la misma). 
-También habrás tomado nota de cómo se ponen las ``comillas dobles'' para que se muestren correctamente. 
-Nota que hay unas comillas de inicio (``) y otras de cierre (''), y que son diferentes.
-Volviendo a las referencias, nota que al compilar, la primera vez se crea un diccionario con las referencias, y en la segunda compilación se ``rellenan'' estas referencias. 
-Por eso hay que compilar dos veces tu memoria.
-Si no, no se crearán las referencias.
-
- \begin{figure}
-    \centering
-    \includegraphics[bb=0 0 800 600, width=12cm, keepaspectratio]{img/foro1}
-    \caption{Página con enlaces a hilos}
-    \label{figura:foro_hilos}
- \end{figure}
-
-A continuación un bloque ``verbatim'', que se utiliza para mostrar texto tal cual.
-Se puede utilizar para ofrecer el contenido de correos electrónicos, código, entre otras cosas.
-
-{\footnotesize
-\begin{verbatim}
-    From gaurav at gold-solutions.co.uk  Fri Jan 14 14:51:11 2005
-    From: gaurav at gold-solutions.co.uk (gaurav_gold)
-    Date: Fri Jan 14 19:25:51 2005
-    Subject: [Mailman-Users] mailman issues
-    Message-ID: <003c01c4fa40$1d99b4c0$94592252@gaurav7klgnyif>
-    Dear Sir/Madam,
-    How can people reply to the mailing list?  How do i turn off
-    this feature? How can i also enable a feature where if someone
-    replies the newsletter the email gets deleted?
-    Thanks
-    From msapiro at value.net  Fri Jan 14 19:48:51 2005
-    From: msapiro at value.net (Mark Sapiro)
-    Date: Fri Jan 14 19:49:04 2005
-    Subject: [Mailman-Users] mailman issues
-    In-Reply-To: <003c01c4fa40$1d99b4c0$94592252@gaurav7klgnyif>
-    Message-ID: <PC173020050114104851057801b04d55@msapiro>
-    gaurav_gold wrote:
-    >How can people reply to the mailing list?  How do i turn off
-    this feature? How can i also enable a feature where if someone
-    replies the newsletter the email gets deleted?
-    See the FAQ
-    >Mailman FAQ: http://www.python.org/cgi-bin/faqw-mm.py
-    article 3.11
-\end{verbatim}
-}
 
 %%-- Objetivos del  proyecto
 %%-- Si la sección anterior ha quedado muy extensa, se puede considerar convertir
@@ -559,12 +521,21 @@ Lo mejor suele ser utilizar una lista no numerada, como sigue:
 
 \section{Planificación temporal}
 \label{sec:planificacion-temporal}
+%A continuación, se puede visualizar el cronograma de este Trabajo Fin de Grado.
 
-Es conveniente que incluyas una descripción de lo que te ha llevado realizar el trabajo.
-Hay gente que añade un diagrama de GANTT.
-Lo importante es que quede claro cuánto tiempo has consumido en realizar el TFG/TFM 
-(tiempo natural, p.ej., 6 meses) y a qué nivel de esfuerzo (p.ej., principalmente los 
-fines de semana).
+Como puede observarse en la figura ~\ref{figura:GANTT_TFG}, en ocasiones se han solapado las fases de trabajo. Esto se debe a que a medida que se iban realizando avances en el proyecto, se iba redactando la memoria y paralelizando tareas que no estuvieran bloqueadas por otras.
+Durante este periodo se ha trabajado de manera diaria tras finalizar la jornada laboral pero, sobre todo, durante los fines de semana que el nivel de esfuerzo ha sido mayor. 
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{img/GANTT_TFG.png}
+        \caption{Diagrama planificación temporal del proyecto}
+        \label{figura:GANTT_TFG}
+    \end{figure}
+    
+%%Lo importante es que quede claro cuánto tiempo has consumido en realizar el TFG/TFM 
+%(tiempo natural, p.ej., 6 meses) y a qué nivel de esfuerzo (p.ej., principalmente los 
+%fines de semana).
+
 
 \section{Estructura de la memoria}
 \label{sec:estructura}
@@ -573,17 +544,28 @@ Por último, en esta sección se introduce a alto nivel la organización del res
 y qué contenidos se van a encontrar en cada capítulo.
 
     \begin{itemize}
-      \item En el primer capítulo se hace una breve introducción al proyecto, se describen los objetivos del mismo y se refleja la planificación temporal.
-      \item En el siguiente capítulo se describen las tecnologías utilizadas en el desarrollo de este TFM/TFG (Capítulo~\ref{chap:tecnologias}).
-      \item En el capítulo~\ref{chap:diseño} Se describe el proceso de desarrollo
-      de la herramienta \ldots
+      \item En este primer capítulo se hace una breve introducción al proyecto, se describen los objetivos del mismo y se refleja la planificación temporal.
+      \item En el siguiente capítulo se describen las tecnologías implicadas en el desarrollo de este TFG. (Capítulo~\ref{chap:tecnologias}).
+      \item En el capítulo~\ref{chap:diseño} Se describe el proceso \textcolor{red}{de desarrollo
+      de la herramienta}  \ldots
       \item En el capítulo~\ref{chap:experimentos} Se presentan las principales pruebas realizadas
       para validación de la plataforma/herramienta\ldots (o resultados de los experimentos
-      efectuados).
+      efectuados). Esta sección contiene, con todo detalle, las pruebas realizadas para realizar la comparativa entre herramientas.
       \item Por último, se presentan las conclusiones del proyecto así como los trabajos futuros que podrían derivarse de éste (Capítulo~\ref{chap:conclusiones}).
     \end{itemize}
 
-\cleardoublepage
+
+\section{Github}
+\label{sec:planificacion-temporal}
+%A continuación, se puede visualizar el cronograma de este Trabajo Fin de Grado.
+
+El código realizado para este Trabajo de Fin de Grado ha sido almacenado en un repositorio de Github. Github es un servicio web que almacena repositorios de proyectos de
+desarrollo software que utilizan el sistema de control de versiones Git
+%%Lo importante es que quede claro cuánto tiempo has consumido en realizar el TFG/TFM 
+%(tiempo natural, p.ej., 6 meses) y a qué nivel de esfuerzo (p.ej., principalmente los 
+%fines de semana).
+
+\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -593,70 +575,88 @@ y qué contenidos se van a encontrar en cada capítulo.
 \chapter{Estado del arte}               %% a.k.a "Tecnologías utilizadas"
 \label{chap:tecnologias}
 
-Descripción de las tecnologías que utilizas en tu trabajo. 
-Con dos o tres párrafos por cada tecnología, vale. 
-Se supone que aquí viene todo lo que no has hecho tú.
+Para el desarrollo de este Trabajo Fin de Grado se han utilizado diferentes tecnologías, las cuales se explican en este capítulo.
 
-Puedes citar libros, como el de Bonabeau et al., sobre procesos estigmérgicos~\cite{bonabeau:_swarm}. 
-Me encantan los procesos estigmérgicos.
-Deberías leer más sobre ellos.
-Pero quizás no ahora, que tenemos que terminar la memoria para sacarnos por fin el título.
-Nota que el \~ \ añade un espacio en blanco, pero no deja que exista un salto de línea. 
-Imprescindible ponerlo para las citas.
+\section{Atom} 
+\label{sec:atom}
+Atom\footnote{\url{https://atom.io/}} es un editor de código fuente especializado en la programación. Compatible con los lenguajes más populares, permite escribir código y programar desde tu PC con Windows,Linux o macOS, con soporte para múltiples plug-in escritos en Node.js y control de versiones Git integrado, desarrollado por GitHub. 
 
-Citar es importantísimo en textos científico-técnicos. 
-Porque no partimos de cero.
-Es más, partir de cero es de tontos; lo suyo es aprovecharse de lo ya existente para construir encima y hacer cosas más sofisticadas.
-¿Dónde puedo encontrar textos científicos que referenciar?
-Un buen sitio es Google Scholar\footnote{\url{http://scholar.google.com}}.
-Por ejemplo, si buscas por ``stigmergy libre software'' para encontrar trabajo sobre software libre y el concepto de \emph{estigmergia} (¿te he comentado que me gusta el concepto de estigmergia ya?), encontrarás un artículo que escribí hace tiempo cuyo título es ``Self-organized development in libre software: a model based on the stigmergy concept''.
-Si pulsas sobre las comillas dobles (entre la estrella y el ``citado por ...'', justo debajo del extracto del resumen del artículo, te saldrá una ventana emergente con cómo citar.
-Abajo a la derecha, aparece un enlace BibTeX.
-Púlsalo y encontrarás la referencia en formato BibTeX, tal que así:
+La mayor parte de los paquetes tienen licencias de software libre y está desarrollados y mantenidos por la comunidad de usuarios. Atom está basado en Electron (Anteriormente conocido como Atom Shell), un framework que permite crear aplicaciones de escritorio multiplataforma. También puede ser utilizado como un \gls{ide}.
 
-\clearpage
-{\footnotesize
-\begin{minted}{bibtex}
-@inproceedings{robles2005self,
-  title={Self-organized development in libre software:
-         a model based on the stigmergy concept},
-  author={Robles, Gregorio and Merelo, Juan Juli\'an 
-          and Gonz\'alez-Barahona, Jes\'us M.},
-  booktitle={ProSim'05},
-  year={2005}
-}
-\end{minted}
-}
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{img/ATOM.png}
+        \caption{Interfaz de Atom}
+        \label{figura:ATOM}
+    \end{figure}
 
-Copia el texto en BibTeX y pégalo en el fichero \texttt{memoria.bib}, que es donde están las referencias bibliográficas.
-Para incluir la referencia en el texto de la memoria, deberás citarlo, como hemos hecho antes con~\cite{bonabeau:_swarm}, lo que pasa es que en vez de el identificador de la cita anterior (bonabeau:\_swarm), tendrás que poner el nuevo (robles2005self).
-Compila el fichero \texttt{memoria.tex} (\texttt{pdflatex memoria.tex}), añade la bibliografía (\texttt{bibtex memoria.aux}) y vuelve a compilar \texttt{memoria.tex} (\texttt{pdflatex memoria.tex})\ldots y \emph{voilà} ¡tenemos una nueva cita~\cite{robles2005self}!
+Personalmente, he optado por Atom porque es el editor que suelo utilizar para todos
+mis proyectos tanto personales como laborales. 
 
-También existe la posibilidad de poner notas al pie de página, por ejemplo, una para indicarte que visite la página del GSyC\footnote{\url{http://gsyc.es}}.
+\section{Python} 
+\label{sec:Python}
 
-\section{Sección 1} 
-\label{sec:seccion1}
+Python~\cite{van2007python} es un lenguaje de programación interpretado y dinámico, de código abierto, que
+soporta tanto el paradigma de la programación orientada a objetos (OOP) como el de la programación funcional.
 
-Hemos hablado de cómo incluir figuras, pero no se ha descrito cómo incluir tablas.
-A continuación se presenta un ejemplo de tabla, la Tabla \ref{tabla:ejemplo} (fíjate 
-en cómo se introduce una referencia a la tabla).
+Se ha elegido este lenguaje de programación para el parseado de datos extraídos de la plataforma de Stack Exchange\footnote{\url{https://stackexchange.com/}}. Además, Python, ofrece múltiples paquetes para la conexión con bases de datos. En este proyecto se ha utilizado el conector oficial de Oracle para MySQL, mysql-connector-python\footnote{\url{https://dev.mysql.com/doc/connector-python/en/connector-python-introduction.html}}, que cumple con la DB API 2.0 de Python~\cite{Python}.
 
-\begin{table}
- \begin{center}
-  \begin{tabular}{ | l | c | r |} % tenemos tres colummnas, la primera alineada a la izquierda (l), la segunda al centro (c) y la tercera a la derecha (r). El | indica que entre las columnas habrá una línea separadora.
-    \hline
-    Uno & 2 & 3 \\ \hline % el hline nos da una línea vertical
-    Cuatro & 5 & 6 \\ \hline
-    Siete & 8 & 9 \\
-    \hline
-  \end{tabular}
-  \caption{Ejemplo de tabla. Aquí viene una pequeña descripción (el \emph{caption}) del contenido de la tabla. Si la tabla no es autoexplicativa, siempre viene bien aclararla aquí.}
-  \label{tabla:ejemplo}
- \end{center}
-\end{table}
+\section{MySQL} 
+\label{sec:Mysql}
 
-\section{Entorno de desarrollo: PyCharm}
-\label{sec:entorno_de_desarrollo}
+El sistema gestor de la base de datos elegido para dar soporte a la persistencia de la información y el tratamiento de datos de forma conveniente ha sido MySQL (v8.0)~\cite{MYSQL}.
+
+MySQL es uno de los gestores de base de datos \gls{sql} más popular en la actualidad. Es desarrollado, distribuido y soportado por Oracle. Se trata de un Software de código abierto (OpenSource), que permite que pueda ser modificado dependiendo de las necesidades de cada usuario. El software de MySQL está basado en GPL (GNU General Public License) que define qué y qué no se debe hacer con el software en diferentes situaciones.
+
+MySQL, desde la versión 5.6, proporciona una herramienta denominada  \textit{MySQLWorkbench}~\cite{krogh2020mysql}. Es una herramienta visual de diseño de bases de datos que integra desarrollo de software, administración de bases de datos, diseño de bases de datos, gestión y mantenimiento para el sistema de base de datos MySQL.
+
+Se ha utilizado MySQL ya que es un source nativo tanto en Grafana como en Tableau, además ofrece múltiples ventajas, donde podemos destacar su alto rendimiento, bajo consumo de recursos, soporte a múltiples Sistemas Operativos y una alta securización de los datos.
+
+\section{Tecnologías de visualización y análisis} 
+\label{sec:Tenologias_va}
+\subsection{Grafana/ Graphite} % título de subsección (se muestra)
+\label{sec:Grafana} % identificador de subsección (no se muestra, es para poder referenciarla)
+
+\textbf{Grafana}~\cite{chakraborty2021grafana} es una herramienta de código abierto para la obtención de datos, almacenamiento, visualización y análisis.
+Se conecta con todas las fuentes de datos posibles, como \textit{Graphite, Prometheus, Influx DB, ElasticSearch, MySQL, PostgreSQL}, y otros.
+
+Grafana, mediante peticiones SQL en tiempo real a la Base de Datos, representa la
+información obtenida en Paneles, que se considera cualquier elemento que represente de forma gráfica la información, y Dashboards, que se trata de una agrupación de paneles, de distinto tipo como, por ejemplo, gráficas de tiempo, sectores cirulares, diagramas de barras, tablas, mapas, etc.
+
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{img/Grafana.png}
+        \caption{Interfaz gráfica Grafana}
+        \label{figura:Grafana}
+    \end{figure}
+
+
+\textbf{Graphite} ~\cite{Graphite} es una herramienta de monitoreo. Facilita el almacenamiento y visualización de datos de series de tiempo. Idealmente, Graphite se usa como fuente de datos para el tablero de Grafana en una configuración de monitoreo de datos.
+
+Graphite fue diseñado y escrito originalmente por Chris Davis en Orbitz en 2006 como un proyecto paralelo que finalmente se convirtió en su herramienta de monitoreo fundamental. En 2008, Orbitz permitió que Graphite se lanzara bajo la licencia de código abierto Apache 2.0 . Numerosas empresas grandes han implementado Graphite en la producción, donde les ayuda a monitorear sus servicios de comercio electrónico de producción y planificar el crecimiento.
+
+\subsection{Tableau}
+\label{sec:tableau}
+
+Tableau~\cite{Tableau} es un software para el análisis y visualización de datos. Tableau se fundó en 2003 como resultado de un proyecto de ciencias de la computación de Stanford. Este tenía como objetivo mejorar el flujo del análisis y poner los datos al alcance de las personas a través de la visualización.  
+Tableau destaca por su facilidad para integrar diferentes tipos de datos y permite la creación de dashboards que facilitan  la toma de decisiones a partir de la información generada. Se trata de un programa flexible, ya que puede ser configurado para que trabaje bajo un servidor, en el escritorio o en la nube, visualizando los datos desde el principio. Además, ofrece cientos de conectores nativos para extraer, limpiar y correlacionar fácilmente datos de prácticamente cualquier fuente sin tener que crear un código personalizado.
+
+En este proyecto, se han utilizado dos herramientas que ofrece Tableau: Tableau Prep y Tableau Desktop. El primero, permite transformar y limpiar los datos mediante un proceso totalmente automático. El segundo, es la aplicación principal que lleva a cabo todo el análisis y donde se crean las visualizaciones. 
+\begin{figure}[H]
+        \includegraphics[width=\textwidth]{img/PREP.png}
+        \caption{Interfaz gráfica Tableau Prep}
+        \label{figura:Grafana}
+    \end{figure}
+    \begin{figure}[H]
+        \includegraphics[width=\textwidth]{img/Desktop.png}
+        \caption{Interfaz gráfica Tableau Desktop}
+        \label{figura:Grafana}
+    \end{figure}
+
+    
+\section{Comparativa Site by Site}
+\label{sec:comparativa}
 
 %%-- El comando \gls{} permite incluir términos en el glosario, para luego reunirlos todos
 %%-- en una tabla al comienzo o al final del documento, junto con sus definiciones.
@@ -665,11 +665,14 @@ PyCharm es un \gls{ide} dedicado concretamente a la programación en Python y de
 
 Proporciona análisis de código, un depurador gráfico, una consola de Python integrada, control de versiones y, además, soporta desarrollo web con Django. Todas estas características lo convierten en un entorno completo e intuitivo, idóneo para el desarrollo de proyectos académicos como el que nos ocupa.
 
+***** METER LOS DATOS DE CRITERIOS DE COMMPARACION (TIPO DE DATOS, Real Time,costes...)
+
+
 
 \section{Redacción de la memoria: LaTeX/Overleaf}
 \label{sec:redaccion_de_la_memoria}
 
-LaTeX es un sistema de composición tipográfica de alta calidad que incluye características especialmente diseñadas para la producción de documentación técnica y científica. Estas características, entre las que se encuentran la posibilidad de incluir expresiones matemáticas, fragmentos de código, tablas y referencias, junto con el hecho de que se distribuya como software libre, han hecho que LaTeX se convierta en el estándar de facto para la redacción y publicación de artículos académicos, tesis y todo tipo de documentos científico-técnicos. 
+LaTeX es un sistema de composición tipográfica de alta calidad que incluye características especialmente diseñadas para la producción de documentación técnica y científica. Estas características, entre las que se encuentran la posibilidad de incfluir expresiones matemáticas, fragmentos de código, tablas y referencias, junto con el hecho de que se distribuya como software libre, han hecho que LaTeX se convierta en el estándar de facto para la redacción y publicación de artículos académicos, tesis y todo tipo de documentos científico-técnicos. 
 
 Por su parte, Overleaf es un editor LaTeX colaborativo basado en la nube. Lanzado originalmente en 2012, fue creado por dos matemáticos que se inspiraron en su propia experiencia en el ámbito académico para crear una solución satisfactoria para la escritura científica colaborativa.
 
@@ -690,6 +693,25 @@ Aquí viene todo lo que has hecho tú (tecnológicamente).
 Puedes entrar hasta el detalle. 
 Es la parte más importante de la memoria, porque describe lo que has hecho tú.
 Eso sí, normalmente aconsejo no poner código, sino diagramas.
+
+\section{Datasets}
+\label{sec:datasets}
+
+******* METER LA INFO DEL TIPO DE DATOS, Servidor, parseado.... 
+%%-- El comando \gls{} permite incluir términos en el glosario, para luego reunirlos todos
+%%-- en una tabla al comienzo o al final del documento, junto con sus definiciones.
+
+PyCharm es un \gls{ide} dedicado concretamente a la programación en Python y desarrollado por la compañía checa JetBrains.
+
+Proporciona análisis de código, un depurador gráfico, una consola de Python integrada, control de versiones y, además, soporta desarrollo web con Django. Todas estas características lo convierten en un entorno completo e intuitivo, idóneo para el desarrollo de proyectos académicos como el que nos ocupa.
+
+\subsection{Parseado de datos}
+\label{sec:parser} 
+A veces se incluyen nombres de archivos, paquetes, etc. como texto monoespaciado, utilizando
+el comando \LaTeX \mintinline{latex}{\texttt{}}. Sin embargo, esto puede generar un problema
+cuando las palabras en fuente monoespaciada alcanzan el final de una línea. En ese caso,
+el compilador rehusa muchas veces romper la palabra y deja la línea demasiado larga respecto
+al resto.
 
 \section{Arquitectura general} 
 \label{sec:arquitectura}
@@ -737,6 +759,20 @@ Si utilizas una base de datos, no te olvides de incluir también un diagrama de 
 Describe los experimentos y casos de test que tuviste que implementar para validar tus resultados. 
 Incluye también los resultados de validación que permiten afirmar que tus resultados son correctos.
 
+\section{Experimento Stack Exchange}
+\label{chap:exper_stack}
+
+Es bastante habitual que se reproduzcan fragmentos de código en la memoria de un TFG/TFM.
+Esto permite explicar detalladamente partes del desarrollo que se ha realizado que se consideren
+de especial interés. No obstante, tampoco es conveniente pasarse e incluir demasiado código en
+la memoria, puesto que se puede alargar mucho el documento. Un recurso muy habitual es subir
+todo el código a un repositorio de un servicio de control de versiones como GitHub o GitLab,
+y luego incluir en la memoria la URL que enlace a dicho repositorio.
+
+Para incluir fragmentos de código en un documento \LaTeX se pueden combinar varias
+herramientas:
+
+\subsection{Localización}
 \section{Incorporación de código en la memoria}
 
 Es bastante habitual que se reproduzcan fragmentos de código en la memoria de un TFG/TFM.
@@ -860,7 +896,7 @@ Es un apartado que sirve para dar ideas de cara a futuros TFGs/TFMs.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % GLOSARIO(S) %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\glsaddall
 \printglossary[type=\acronymtype]
 
 \printglossary
@@ -883,10 +919,6 @@ Es un apartado que sirve para dar ideas de cara a futuros TFGs/TFMs.
 
 \cleardoublepage
 
-%% OLD BIBTEX CODE, TO BE DELETED
-%\bibliographystyle{abbrv}
-%\bibliographystyle{plain} 
-%\bibliography{memoria}  % memoria.bib es el nombre del fichero que contiene las referencias bibliográficas.
 
 % https://www.overleaf.com/learn/latex/Bibliography_management_with_biblatex
 \raggedright\printbibliography[heading=bibintoc,title={Referencias}]

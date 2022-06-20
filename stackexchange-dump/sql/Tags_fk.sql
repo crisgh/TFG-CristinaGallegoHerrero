@@ -1,0 +1,4 @@
+-- dummy query
+SET FOREIGN_KEY_CHECKS = 0;
+ALTER TABLE Tags ENGINE=InnoDB;
+SELECT 1;

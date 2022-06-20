@@ -1,0 +1,4 @@
+-- dummy query
+SET FOREIGN_KEY_CHECKS = 0;
+ALTER TABLE Users ENGINE=InnoDB;
+SELECT 1;

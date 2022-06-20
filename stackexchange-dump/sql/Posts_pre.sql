@@ -1,0 +1,26 @@
+DROP TABLE IF EXISTS Posts ;
+CREATE TABLE IF NOT EXISTS Posts (
+    Id                     int PRIMARY KEY    ,
+    PostTypeId             int not NULL       ,
+    AcceptedAnswerId       int                ,
+    ParentId               int                ,
+    CreationDate           timestamp not NULL ,
+    Score                  int                ,
+    ViewCount              int                ,
+    Body                   text               ,
+    OwnerUserId            int                ,
+    OwnerDisplayName       VARCHAR(255)       ,
+    LastEditorUserId       int                ,
+    LastEditorDisplayName  text               ,
+    LastEditDate           timestamp          ,
+    LastActivityDate       timestamp          ,
+    Title                  text               ,
+    Tags                   text               ,
+    AnswerCount            int                ,
+    CommentCount           int                ,
+    ContentLicense         VARCHAR(255)       ,
+    FavoriteCount          int                ,
+    ClosedDate             timestamp          ,
+    CommunityOwnedDate     timestamp          ,
+    jsonfield              JSON
+);

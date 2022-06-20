@@ -1,0 +1,5 @@
+SET FOREIGN_KEY_CHECKS = 0;
+ALTER TABLE Comments ENGINE=InnoDB;
+ALTER TABLE Users ENGINE=InnoDB;
+ALTER TABLE Comments ADD CONSTRAINT fk_comments_userid FOREIGN KEY (userid) REFERENCES users (id);
+ALTER TABLE Comments ADD CONSTRAINT fk_comments_postid FOREIGN KEY (postid) REFERENCES posts (id);

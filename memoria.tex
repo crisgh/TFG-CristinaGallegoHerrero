@@ -51,6 +51,12 @@
 %%-- Activar esta línea y comentar la anterior en modo borrador, para comentarios al margen
 %\usepackage[a4paper, left=2.5cm, right=2.5cm, top=3cm, bottom=3cm, marginparwidth=60pt]{geometry}
 
+%% Ruptura de página y línea
+\sloppy
+\clubpenalty= 10000
+\widowpenalty=10000
+\brokenpenalty=10000
+
 %%-- Hay que cargarlo antes que las traducciones
 \usepackage{listing}                    % Listados de código
 
@@ -122,6 +128,9 @@
 \usepackage{wrapfig}                    % Envolver texto en las figuras
 \usepackage{capt-of}
 \usepackage{multirow}                   % Multirow tablas
+
+\usepackage{rotating}                   % Rotación de figuras
+
 %%-- Bibliografía con Biblatex y Biber
 % Más info:
 % https://www.overleaf.com/learn/latex/Biblatex_bibliography_styles
@@ -458,9 +467,9 @@ We have decided to focus on two main tools. Grafana for data analysis and visual
 \chapter{Introducción}
 \label{sec:intro}
 \pagenumbering{arabic} % para empezar la numeración de página con números
-La información es poder,\textit{“Scientia potentia est”}:
-el conocimiento es poder, decía Thomas Hobbes  en el \textit{Leviatán (1688)}. Hoy en día, vivimos en un mundo en constante revolución tecnológica, almacenamos todo tipo de información en bases de datos, y estas bases necesitan de técnicas y herramientas de análisis para obtener la mayor eficiencia.
-Todo el conjunto de datos , procesos y análisis se denomina Big Data~\cite{mayer2013big}.
+
+\textit{“Scientia potentia est”} decía Thomas Hobbes en su obra \textit{Leviatán (1688)}, si aplicamos esta misma filosofía a la actualidad podemos indicar que, "la información es poder". Hoy en día, vivimos una evolución tecnológica continua, toda la información que nos rodea se almacena en bases de datos, y estas necesitan de técnicas y herramientas de análisis para obtener la mayor información optimizando los recursos.
+Ese conjunto de datos, procesos requeridos y análisis se denomina Big Data \cite{mayer2013big}.
 
 El análisis de datos trata de obtener conclusiones significativas sobre los datos que se analizan. Para ello se aplican técnicas estadísticas y lógicas, modulación de la estructura de los datos y la representación de estos mediante imágenes, tablas y gráficos~\cite{aranda2009tecnicas}.
 %% Es *** increíble lo que se usa en todos los ámbitos ***
@@ -482,7 +491,9 @@ En este proyecto se realizan los pasos anteriormente indicados, centrándonos en
 
 Hoy en día la visualización de la información tiene un valor muy importante, ya que es una manera sencilla de llegar a todos los públicos. Actualmente, todas las empresas de cualquier ámbito utilizan alguna herramienta de análisis que les permita visualizar y analizar los datos de manera centralizada. 
 
-Existen múltiples herramientas que permiten esta visualización y análisis, durante este proyecto, se realiza la comparación basándonos en diferentes criterios de dos herramientas que actualmente se encuentran en gran parte del sector. 
+Existen múltiples herramientas que permiten esta visualización y análisis, durante este proyecto, se realiza la comparación basándonos en diferentes criterios de dos herramientas que actualmente se encuentran en gran parte del sector.
+
+Como caso de estudio que propicie esta comparativa, se ha elegido el procesamiento y análisis de datos procedentes de varias comunidades \textit{online} de pregunta/respuesta. Estas comunidades han adquirido especial relevancia en la última década como aceleradores de la adquisición de conocimientos, enriqueciendo en algunos casos los métodos de trabajo de industrias como el desarrollo de software.
 
 
 %%-- Objetivos del  proyecto
@@ -496,16 +507,16 @@ Existen múltiples herramientas que permiten esta visualización y análisis, du
 \label{sec:objetivo-general} % identificador de subsección (no se muestra, es para poder referenciarla)
 
 
-El objetivo general de este \gls{tfg} consiste en analizar conjuntos de datos reales y comparar varias herramientas software de visualización de datos.
+El objetivo general de este \gls{tfg} consiste en analizar conjuntos de datos reales, que reflejan la actividad de dos comunidades online de pregunta/respuesta de pequeño y mediano tamaño, respectivamente, comparando varias herramientas software de visualización de datos para interpretar los resultados de dicho análisis.
 
 \subsection{Objetivos específicos}
 \label{sec:objetivos-especificos}
 
     \begin{itemize}
-        \item Analizar y estudiar las herramientas más utilizadas en el análisis de datos.
-        \item Obtener y parsear un conjunto de datos de gran tamaño, sobre el sitio Stack Exchange.
-        \item Evaluar las herramientas seleccionadas (Grafana y Tableau) para la visualización de bases de datos.
-        \item Detallar y comparar los resultados obtenidos tras los análisis realizados según diferentes criterios de las bases de datos.
+        \item Estudiar algunas de las herramientas más utilizadas en el análisis de datos.
+        \item Obtener y procesar un conjunto de datos de gran tamaño, sobre el sitio Stack Exchange.
+        \item Evaluar las herramientas seleccionadas (Grafana y Tableau) para la visualización de información en bases de datos.
+        \item Detallar y comparar los resultados obtenidos tras los análisis realizados, según diferentes criterios de las bases de datos.
         %\item \ldots
     \end{itemize}
 
@@ -513,12 +524,12 @@ El objetivo general de este \gls{tfg} consiste en analizar conjuntos de datos re
 \label{sec:planificacion-temporal}
 %A continuación, se puede visualizar el cronograma de este Trabajo Fin de Grado.
 
-Como puede observarse en la figura ~\ref{figura:GANTT_TFG}, en ocasiones se han solapado las fases de trabajo. Esto se debe a que a medida que se iban realizando avances en el proyecto, se iba redactando la memoria y paralelizando tareas que no estuvieran bloqueadas por otras.
+Como puede observarse en la figura~\ref{figura:GANTT_TFG}, en ocasiones se han solapado las fases de trabajo. Esto se debe a que a medida que se iban realizando avances en el proyecto, se iba redactando la memoria y paralelizando tareas que no estuvieran bloqueadas por otras.
 Durante este periodo se ha trabajado de manera diaria tras finalizar la jornada laboral pero, sobre todo, durante los fines de semana que el nivel de esfuerzo ha sido mayor. 
     \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{img/GANTT_TFG.png}
-        \caption{Diagrama planificación temporal del proyecto}
+        \caption{Diagrama planificación temporal del proyecto.}
         \label{figura:GANTT_TFG}
     \end{figure}
     
@@ -535,11 +546,11 @@ y qué contenidos se van a encontrar en cada capítulo.
 
     \begin{itemize}
       \item En este primer capítulo se hace una breve introducción al proyecto, presentando el contexto, se hace una descripción de los objetivos del mismo y se refleja la planificación temporal.
-      \item En el siguiente capítulo se describen las tecnologías involucradas en el desarrollo de este proyecto. (Capítulo~\ref{chap:tecnologias}).
+      \item En el siguiente capítulo se describen las tecnologías involucradas en el desarrollo de este proyecto. (capítulo~\ref{chap:tecnologias}).
       \item En el capítulo~\ref{chap:diseño} se presentan los \textit{dataset} utilizados en el proyecto, explicando el esquema de la base de datos. 
       \item En el capítulo~\ref{chap:experimentos} se presentan las principales pruebas realizadas y se comentan los resultados de los experimentos
       efectuados por cada herramienta. 
-      \item Por último, las principales conclusiones se presentan en el capítulo (Capítulo~\ref{chap:conclusiones}), incluyendo un resumen de las conclusiones obtenidas del proyecto, así como los trabajos futuros que podrían derivarse de éste.
+      \item Por último, las principales conclusiones se condensan en el capítulo~\ref{chap:conclusiones}, incluyendo un resumen de las conclusiones obtenidas del proyecto, así como los trabajos futuros que podrían derivarse de éste.
     \end{itemize}
 
 
@@ -566,12 +577,12 @@ Para el desarrollo de este proyecto se han utilizado diferentes tecnologías, la
 \label{sec:atom}
 Atom\footnote{\url{https://atom.io/}} es un editor de código fuente especializado en la programación. Compatible con los lenguajes más populares, permite escribir código y programar desde tu PC con Windows, Linux o macOS, con soporte para múltiples \gls{plugin} escritos en Node.js y control de versiones Git integrado, desarrollado por GitHub. 
 
-La mayor parte de los paquetes tienen licencias de software libre y está desarrollados y mantenidos por la comunidad de usuarios. Atom está basado en Electron (Anteriormente conocido como Atom Shell), un framework que permite crear aplicaciones de escritorio multiplataforma. También puede ser utilizado como un \gls{ide}.
+La mayor parte de los paquetes tienen licencias de software libre y está desarrollados y mantenidos por la comunidad de usuarios. Atom está basado en Electron (anteriormente conocido como Atom Shell), un \textit{framework} que permite crear aplicaciones de escritorio multiplataforma. También puede ser utilizado como un \gls{ide}.
 
 \begin{figure}[ht]
         \centering
         \includegraphics[width=\textwidth]{img/ATOM.png}
-        \caption{Interfaz de Atom}
+        \caption{Interfaz de Atom.}
         \label{figura:ATOM}
     \end{figure}
 
@@ -605,7 +616,7 @@ Se ha utilizado MySQL ya que es un source nativo tanto en Grafana como en Tablea
 \textbf{Grafana}~\cite{chakraborty2021grafana} es una herramienta \gls{oss} para la obtención de datos, almacenamiento, visualización y análisis.
 Se conecta con todas las fuentes de datos posibles, como \textit{Graphite, Prometheus, Influx DB, ElasticSearch, MySQL, PostgreSQL}, y otros.
 
-Grafana, mediante peticiones SQL en tiempo real a la Base de Datos, representa la
+Grafana, mediante peticiones SQL en tiempo real a la base de datos, representa la
 información obtenida en Paneles, que se considera cualquier elemento que represente de forma gráfica la información, y Dashboards, que se trata de una agrupación de paneles, de distinto tipo como, por ejemplo, gráficas de tiempo, sectores circulares, diagramas de barras, tablas, mapas, etc.
 
 En la imagen \ref{figura:Grafana} se muestra  el panel principal de la interfaz gráfica de Grafana tras haber realizado el \emph{login} con usuario y contraseña.
@@ -613,7 +624,7 @@ En la imagen \ref{figura:Grafana} se muestra  el panel principal de la interfaz 
 \begin{figure}[ht]
         \centering
         \includegraphics[width=0.8\textwidth]{img/Grafana.png}
-        \caption{Interfaz gráfica Grafana}
+        \caption{Interfaz gráfica Grafana.}
         \label{figura:Grafana}
     \end{figure}
 
@@ -625,7 +636,7 @@ Graphite fue diseñado y escrito originalmente por Chris Davis en Orbitz en 2006
 \subsection{Tableau}
 \label{sec:tableau}
 
-Tableau~\cite{Tableau} es un software para el análisis y visualización de datos. Tableau se fundó en 2003 como resultado de un proyecto de ciencias de la computación de Stanford. Este tenía como objetivo mejorar el flujo del análisis y poner los datos al alcance de las personas a través de la visualización.  
+Tableau~\cite{Tableau} es un software para el análisis y visualización de datos. Se fundó en 2003 como resultado de un proyecto de ciencias de la computación de Stanford, que tenía como objetivo mejorar el flujo del análisis y poner los datos al alcance de las personas a través de la visualización.  
 Tableau destaca por su facilidad para integrar diferentes tipos de datos y permite la creación de dashboards que simplifican la toma de decisiones a partir de la información generada. Se trata de un programa flexible, ya que puede ser configurado para que trabaje bajo un servidor, en el escritorio o en la nube, visualizando los datos desde el principio. Además, ofrece cientos de conectores nativos para extraer, limpiar y correlacionar fácilmente datos de prácticamente cualquier fuente sin tener que crear un código personalizado.
 
 En este proyecto, se han utilizado dos herramientas que ofrece Tableau: Tableau Prep (\ref{figura:Tableau_Prep}) y Tableau Desktop (\ref{figura:Tableau_desktop}). El primero, permite transformar y limpiar los datos mediante un proceso totalmente automático. El segundo, la aplicación principal, lleva a cabo todo el análisis y la creación de visualizaciones. 
@@ -633,7 +644,7 @@ En este proyecto, se han utilizado dos herramientas que ofrece Tableau: Tableau 
 \begin{figure}[ht]
     \centering
         \includegraphics[width=0.8\textwidth]{img/PREP.png}
-        \caption{Interfaz gráfica Tableau Prep}
+        \caption{Interfaz gráfica Tableau Prep.}
         \label{figura:Tableau_Prep}
     \end{figure}
 
@@ -645,11 +656,11 @@ En este proyecto, se han utilizado dos herramientas que ofrece Tableau: Tableau 
   \subfloat[Desktop]{
    \label{f:desktop}
     \includegraphics[width=0.4\textwidth]{img/Desktop.png}}
- \caption{Interfaz gráfica Tableau Desktop}
+ \caption{Interfaz gráfica Tableau Desktop.}
  \label{figura:Tableau_desktop}
 \end{figure}
     
-\section{Comparativa Side by Side}
+\section{Comparativa directa}
 \label{sec:comparativa}
 
 Grafana y Tableau son herramientas para el análisis y visualización de datos. 
@@ -699,39 +710,47 @@ En esta sección se explicará el diseño e implementación del proyecto, comenz
 En la figura~\ref{fig:_arquitectura} se puede observar el diagrama de flujo del proyecto. Comenzamos con el volcado de datos desde la plataforma Stack Exchange \footnote{\url{https://archive.org/details/stackexchange}} y tras descargar los ficheros, realizamos el \emph{parseo} de los mismos para insertarlos en la~\gls{bbdd} MySQL del proyecto. El diagrama de entidad-relación (EER) de la base de datos se puede observa en la figura~\ref{fig:modelo_entidad_relacion}, donde vemos las diferentes tablas que almacenan la información.   
 \begin{figure}
     \centering
-    \includegraphics[width=0.7\textwidth, keepaspectratio]{img/flujo_arquitectura.png}
-    \caption{Diagrama de flujo del proyecto}\label{fig:_arquitectura}
+    \includegraphics[width=0.85\textwidth, keepaspectratio]{img/flujo_arquitectura.png}
+    \caption{Diagrama de flujo del proyecto.}
+    \label{fig:_arquitectura}
 \end{figure}
 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.5\textwidth, keepaspectratio]{img/modelo_entidad_relacion.png}
-  \caption{Diagrama de entidad-relación (\gls{eer}) de la Base de Datos.}\label{fig:modelo_entidad_relacion}
-\end{figure}
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=0.7\textwidth, keepaspectratio]{img/modelo_entidad_relacion.png}
+%   \caption{Diagrama de entidad-relación (\gls{eer}) de la Base de Datos.}\label{fig:modelo_entidad_relacion}
+% \end{figure}
 
 Veremos con más detalle el \emph{parseo} de datos en el capítulo \ref{sec:parser}, ya que se ha implementado un programa en Python que realiza la descarga y la inserción de datos en MySQL.
 
 Una vez que tenemos los datos en nuestra~\gls{bbdd}, realizamos la conexión con las diferentes herramientas de análisis y visualización. En nuestro caso, conectamos la base de datos con Grafana y Tableau Prep. Desde Grafana, realizamos la limpieza de los datos, el análisis de estos y su visualización. La conexión con Tableau Prep nos permite llevar a cabo la limpieza de datos y conectamos directamente con Tableau Desktop que realiza su análisis y visualización.
 
+
+%\begin{sidewaysfigure}
+%    \centering
+%    \includegraphics[width=0.62\textwidth, keepaspectratio]{img/modelo_entidad_relacion.png}
+%    \caption{Diagrama de entidad-relación (\gls{eer}) de la Base de Datos.}
+%    \label{fig:modelo_entidad_relacion}
+%\end{sidewaysfigure}
+
 Por último, en el flujo del proyecto, vemos la comparación de los resultados obtenidos en ambas herramientas basándonos en los criterios identificados en la sección \ref{sec:comparativa}
 
 Cabe destacar que se ha utilizado MySQL como plataforma para alojar la base de datos por ser un \emph{source} nativo de las herramientas, es decir, podemos conectarnos a los datos sin desarrollos adicionales.
-
+\newpage
 \subsection{Parseado de datos}
 \label{sec:parser} 
 
 Como se indicaba en el capitulo anterior, en este proyecto se ha implementado un \emph{parser} en Python encargado de transformar los datos \gls{xml} a la estructura de datos para ser procesada en MySQL. 
 
-En la figura \ref{fig:proyecto-atom} observamos la estructura del proyecto. En ella encontramos el fichero \texttt{load\_into\_pg.py} que se trata del script principal. En este fichero se importan las diferentes librerías propias de python y el módulo \texttt{row\_processor.py} usado para analizar el fichero XML volcado de StackExchange y que devuelve un generador de campos por cada línea extraída. 
+En la figura \ref{fig:proyecto-atom} observamos la estructura del proyecto. En ella encontramos el fichero \texttt{load\_into\_pg.py} que se trata del \emph{script} principal. En este fichero se importan las diferentes librerías propias de python y el módulo \texttt{row\_processor.py} usado para analizar el fichero XML volcado de StackExchange y que devuelve un generador de campos por cada línea extraída. 
 
-%
+Centrándonos en el fichero \texttt{load\_into\_pg.py}, presenta dos modalidades de uso: Una, realizando carga de la base de datos mediante la descarga de ficheros en un directorio temporal, que tras ser procesado será borrado. Otra, realizando la carga cada la tabla de la base de datos asociada por cada fichero extraído previamente en local. 
+
 \begin{wrapfigure}{r}{0.25\textwidth} %this figure will be at the right
     \centering
     \includegraphics[width=0.24\textwidth]{img/proyecto-atom.png}
-    \caption{Proyecto en Atom - Parseo de datos}\label{fig:proyecto-atom}
+    \caption{Proyecto en Atom - Parseo de datos.}\label{fig:proyecto-atom}
 \end{wrapfigure}
-
-Centrándonos en el fichero \texttt{load\_into\_pg.py}, presenta dos modalidades de uso: Una, realizando carga de la base de datos mediante la descarga de ficheros en un directorio temporal, que tras ser procesado será borrado. Otra, realizando la carga cada la tabla de la base de datos asociada por cada fichero extraído previamente en local. 
 
 Si elegimos la descarga completa, haremos uso de la función \texttt{show\_progress} que muestra el tamaño total del archivo a descargar y el progreso en porcentaje. Es el único punto que difiere el código para la obtención de datos.
 
@@ -739,7 +758,7 @@ Siguiendo con el fichero, tenemos distintas llamadas a ficheros externos que gen
 
 La función principal \texttt{handleTable} maneja las diferentes tablas, incluyendo el preprocesado y el posprocesado, indicando el tiempo que se emplea en cada paso. Además,  realiza la conexión con la base de datos. En nuestro caso, como se ha indicado en capítulos previos, hemos utilizado MySQL y para conectarnos se ha hecho uso del conector \texttt{mysql.connector} (oficial de Oracle).
 
-Para el preprocesado de datos, se hace referencia a los ficheros \texttt{\emph{nombre\_tabla}\_pre.sql} que incluye la \emph{query} para la creación de las distintas tablas. Una vez creadas, se realiza el procesado y la extracción de los diferentes elementos mediante el módulo \texttt{row\_processor.py} que parsea el XML. Tras ese parseado, desde el script principal, se lanza un bucle para recorrer todas las fichas que llama a la función \texttt{ins\_query\_maker} que asocia cada atributo (columnas) con las tuplas (Conjunto de filas) devueltas en el parseado y se crea la \emph{query} que sera retornada para que se ejecute desde la función principal.
+Para el preprocesado de datos, se hace referencia a los ficheros \texttt{\emph{nombre\_tabla}\_pre.sql} que incluye la \emph{query} para la creación de las distintas tablas. Una vez creadas, se realiza el procesado y la extracción de los diferentes elementos mediante el módulo \texttt{row\_processor.py} que parsea el \gls{xml}. Tras ese parseado, desde el \emph{script} principal, se lanza un bucle para recorrer todas las fichas que llama a la función \texttt{ins\_query\_maker} que asocia cada atributo (columnas) con las tuplas (Conjunto de filas) devueltas en el parseado y se crea la \emph{query} que sera retornada para que se ejecute desde la función principal.
 
 \begin{listing}[t]
     \caption{Función: \texttt{ins\_query\_maker}.}{}
@@ -789,7 +808,7 @@ ALTER TABLE Comments ADD CONSTRAINT fk_comments_postid FOREIGN KEY (postid) REFE
     \end{minted}
 \end{listing}
 
-Finalmente, tras lanzar el script obtenemos la base de datos completa y actualizada con los datos a analizar.
+Finalmente, tras lanzar el \emph{script} obtenemos la base de datos completa y actualizada con los datos a analizar.
 
 \begin{listing}[t]
     \caption{Tablas creadas en MySQL.}{}
@@ -813,7 +832,7 @@ Finalmente, tras lanzar el script obtenemos la base de datos completa y actualiz
 \end{listing}
 
 \begin{listing}[t]
-    \caption{Tabla \texttt{Comments} en MySQL}{}
+    \caption{Tabla \texttt{Comments} en MySQL.}{}
     \label{lst:4}
     \begin{minted}[breaklines, fontsize=\footnotesize, baselinestretch=1]{sql}
                 mysql> desc comments;
@@ -833,7 +852,7 @@ Finalmente, tras lanzar el script obtenemos la base de datos completa y actualiz
     \end{minted}
 \end{listing}
 \begin{listing}[t]
-    \caption{Foreign Key de la tabla \texttt{Comments} en MySQL}{}
+    \caption{Foreign Key de la tabla \texttt{Comments} en MySQL.}{}
     \label{lst:5}
     \begin{minted}[breaklines, fontsize=\footnotesize, baselinestretch=1]{sql}
     mysql> SELECT CONSTRAINT_CATALOG,CONSTRAINT_NAME,TABLE_NAME,CONSTRAINT_TYPE,ENFORCED FROM information_schema.TABLE_CONSTRAINTS
@@ -854,9 +873,9 @@ Finalmente, tras lanzar el script obtenemos la base de datos completa y actualiz
 \section{Datasets}
 \label{sec:datasets}
 
-Los datasets utilizados en este Trabajo de Fin de Grado han sido extraídos de la plataforma Stack Exchange \footnote{\url{https://stackexchange.com/}}, una plataforma compuesta por 173 comunidades online de preguntas y respuestas, que permite a los usuarios realizar preguntas, aprender y compartir conocimientos.
+Los \textit{datasets} utilizados en este Trabajo de Fin de Grado han sido extraídos de la plataforma Stack Exchange \footnote{\url{https://stackexchange.com/}}, una plataforma compuesta por 173 comunidades online de preguntas y respuestas, que permite a los usuarios realizar preguntas, aprender y compartir conocimientos.
 
-El contenido de los dataset esta organizado en varias tablas: 
+El contenido de los \textit{dataset} esta organizado en varias tablas: 
  \begin{itemize}
         \item \emph{Badges} - Insignias, es la reputación del usuario en la comunidad de Stack Exchange (oro, plata,bronce\ldots)
         \item \textbf{\emph{Comments}} - Comentarios de la publicación.
@@ -870,11 +889,11 @@ El contenido de los dataset esta organizado en varias tablas:
 
 \subsection{Primer dataset: Computer Science Educators}
 \label{sec:cseducators} 
-Como dataset inicial, para realizar una comparativa de los datos obtenidos en ambas herramientas, se ha elegido uno de pequeñas dimensiones. En este caso ha sido Computer Science Educators (\emph{cseducators}).
+Como \textit{dataset} inicial, para realizar una comparativa de los datos obtenidos en ambas herramientas, se ha elegido uno de pequeñas dimensiones. En este caso ha sido Computer Science Educators (\emph{cseducators}).
 
-Computer Science Educators\footnote{\url{https://cseducators.stackexchange.com/}}, es un servicio web de pregunta-respuesta de Stack Exchange para Educadores de Ciencias de la Computación, es decir, para aquellas personas involucradas en el campo de la enseñanza de las Ciencias de la Computación. Hay unos diez mil usuarios utilizando la plataforma y es visitada por unos 84 usuarios al día.
+Computer Science Educators\footnote{\url{https://cseducators.stackexchange.com/}}, es un servicio web de pregunta-respuesta de Stack Exchange para Educadores de Ciencias de la Computación, es decir, para aquellas personas involucradas en el campo de la enseñanza de las Ciencias de la Computación. Hay unos diez mil usuarios utilizando la plataforma y es visitada por unos 84 usuarios al día. 
 
-Este dataset ha sido elegido por el número de usuarios de la plataforma y la cantidad de preguntas existentes, que es aproximadamente de mil preguntas/respuestas. 
+Este \textit{dataset} ha sido elegido por el número de usuarios de la plataforma y la cantidad de preguntas existentes, que es aproximadamente de mil preguntas/respuestas. Este conjunto de datos una vez parseados e insertados en la base de datos ocupa 137.53 MB.  
 
 %%\subsection{Segundo dataset: Chemistry}
 %\label{sec:chemistry} 
@@ -885,11 +904,12 @@ Este dataset ha sido elegido por el número de usuarios de la plataforma y la ca
 
 \subsection{Segundo dataset: Tex}
 \label{sec:tex} 
-Como segundo dataset se ha elegido uno de mayores dimensiones, que incluye una extensa cantidad de datos extraídos de la plataforma Tex StackExhange (\emph{tex}).
+Como segundo \textit{dataset} se ha elegido uno de mayores dimensiones, que incluye una extensa cantidad de datos extraídos de la plataforma Tex StackExhange (\emph{tex}).
 
 Tex \footnote{\url{https://https://tex.stackexchange.com/}} es parte de la red Stack Exchange. se trata de un sitio web de preguntas y respuestas para usuarios de Tex, LaTeX, ConTeXt y otros sistemas de tipografía y composición de documentos. La plataforma fue fundada en 2010 y es una comunidad activa, con unas 235 mil preguntas y más de 300 mil respuestas. El número de usuarios es más de 230 mil y es visitada por, aproximadamente, 58 mil de usuarios al día.
+Este conjunto de datos al realizar la extracción tiene un tamaño de 4,20 GB, una vez que se ha realizado el parseado hacia la base de datos esta muestra ocupa 2882.20 MB.
 
-Se ha escogido este dataset por el número de usuarios de la plataforma y la cantidad de preguntas existentes, ya que representa una comunidad de gran tamaño. 
+Se ha escogido este \textit{dataset} por el número de usuarios de la plataforma y la cantidad de preguntas existentes, ya que representa una comunidad de gran tamaño. 
 
 \cleardoublepage
 
@@ -901,15 +921,15 @@ Se ha escogido este dataset por el número de usuarios de la plataforma y la can
 \chapter{Experimentos y validación}
 \label{chap:experimentos}
 
-En este capítulo se describen paso a paso los experimentos implementados por cada Dataset de nuestro proyecto, las representaciones con las que analizaremos el comportamiento de las herramientas en función de los criterios identificados en los apartados previos y la evolución de las comunidades. 
+En este capítulo se describen paso a paso los experimentos implementados por cada \textit{dataset} de nuestro proyecto, las representaciones con las que analizaremos el comportamiento de las herramientas en función de los criterios identificados en los apartados previos y la evolución de las comunidades. 
 
 \section{Experimento Computer Science Educators}
 \label{chap:exper_cseducators}
 
 Para comenzar con el experimento, seguimos el flujo mencionado en el apartado \ref{sec:arquitectura}. 
-Primero crearemos la base de datos (\emph{cseducators}) en MySQL que utilizaremos en este experimento \ref{lst:7}. Después lanzaremos el script \texttt{load\_into\_pg.py} que descarga los ficheros, parsea los datos y los carga sobre la base creada.
+Primero crearemos la base de datos (\emph{cseducators}) en MySQL que utilizaremos en este experimento \ref{lst:7}. Después lanzaremos el \emph{script} \texttt{load\_into\_pg.py} que descarga los ficheros, parsea los datos y los carga sobre la base creada.
 \begin{listing}[t]
-    \caption{Create database}{}
+    \caption{Create database.}{}
     \label{lst:7}
     \begin{minted}[breaklines, fontsize=\footnotesize, baselinestretch=1]{sql}
                         mysql> create database cseducators;
@@ -917,21 +937,21 @@ Primero crearemos la base de datos (\emph{cseducators}) en MySQL que utilizaremo
     \end{minted}
 \end{listing}
 
-Con el dataset extraído de Stack Exchange indicado anteriormente, se ha decidido realizar una serie de visualizaciones, descritas en las siguientes secciones, que nos permiten analizar la comunidad y visualizarlas mediante el uso de ambas herramientas. 
+Con el \textit{dataset} extraído de Stack Exchange indicado anteriormente, se ha decidido realizar una serie de visualizaciones, descritas en las siguientes secciones, que nos permiten analizar la comunidad y visualizarlas mediante el uso de ambas herramientas. 
 
 
 \subsection{Usuarios}
-Dentro de este dataset, una de las métricas más importantes es el número de usuarios que utilizan la plataforma. Cada usuario presenta un identificador único dentro de la comunidad.  
+Dentro de este \textit{dataset}, una de las métricas más importantes es el número de usuarios que utilizan la plataforma. Cada usuario presenta un identificador único dentro de la comunidad.  
 Esta comunidad fue creada en 2017, por lo que los primeros usuarios son de esa fecha. A partir de ese momento el número de usuarios se ve incrementado hasta la fecha actual. 
 
 Se puede representar el valor de los usuarios de diversas formas: mostrando el total de usuario existentes, o mostrando la evolución y el crecimiento que han tenido durante diferentes periodos temporales. 
 
-Los datos descargados tienen una fecha de extracción del 17 de marzo de 2022, hasta este día hay un total de 10475 usuarios. Podemos observar ese dato gráficamente en la figura  \ref{figura:total_users}. 
+Los datos descargados tienen una fecha de extracción del 17 de marzo de 2022, hasta este día hay un total de 10.475 usuarios. Podemos observar ese dato gráficamente en la figura  \ref{figura:total_users}. 
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.5\textwidth]{img/cse/Total_usuarios.png}
-    \caption{Panel: Total de usuarios (Interfaz: Grafana)}
+    \includegraphics[width=0.6\textwidth]{img/cse/Total_usuarios.png}
+    \caption{Panel: Total de usuarios (interfaz: Grafana).}
     \label{figura:total_users}
 \end{figure}
 
@@ -941,7 +961,7 @@ Este dato nos aporta una visión general pero no permite observar la evolución 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.75\textwidth]{img/cse/evolucion_usuarios.png}
-    \caption{Panel: Evolución anual de usuarios (Interfaz: Grafana)}
+    \caption{Panel: Evolución anual de usuarios (interfaz: Grafana).}
     \label{figura:evo_users}
 \end{figure}
 
@@ -954,7 +974,7 @@ Si vemos detenidamente la gráfica \ref{figura:evo_users_trim} observamos que un
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.6\textwidth]{img/cse/evolucion_usuarios_años.png}
-    \caption{Panel: Evolución trimestral de usuarios (Interfaz: Tableau)}
+    \caption{Panel: Evolución trimestral de usuarios (interfaz: Tableau).}
     \label{figura:evo_users_trim}
 \end{figure}
 
@@ -963,19 +983,19 @@ Con los datos extraídos y analizados en la herramienta de Tableau, podemos real
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.6\textwidth]{img/cse/Tendencia_pronostico_CsE.png}
-    \caption{Panel: Tendencia y pronóstico 2022 CS Educators (Interfaz: Tableau)}
+    \caption{Panel: Tendencia y pronóstico 2022 CS Educators (interfaz: Tableau).}
     \label{figura:tendencia_cse}
 \end{figure}
 
 
 
 
-Entre el conjunto de datos existente en la tabla de usuarios se encuentra la localización. Si observamos la figura \ref{figura:MAP_users_cse} vemos los países presentan mayor cantidad de usuarios. En este dataset tenemos aproximadamente dos mil usuarios con localización distinta de \emph{NULL} por ello se ha realizado un preprocesado de estos datos para unificar los datos y excluir todos los valores que no contienen una ubicación real. 
+Entre el conjunto de datos existente en la tabla de usuarios se encuentra la localización. Si observamos la figura \ref{figura:MAP_users_cse} vemos los países presentan mayor cantidad de usuarios. En este \textit{dataset} tenemos aproximadamente dos mil usuarios con localización distinta de \emph{NULL} por ello se ha realizado un preprocesado de estos datos para unificar los datos y excluir todos los valores que no contienen una ubicación real. 
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.75\textwidth]{img/cse/Maps_cse.png}
-    \caption{Panel: Localización de usuarios Tex (Interfaz: Tableau)}
+    \includegraphics[width=\textwidth]{img/cse/Maps_cse.png}
+    \caption{Panel: Localización de usuarios Tex (interfaz: Tableau).}
     \label{figura:MAP_users_cse}
 \end{figure}
 
@@ -988,7 +1008,7 @@ En la gráfica \ref{figura:evo_post_anual} observamos que el número de pregunta
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\textwidth]{img/cse/evo_posts_anual.png}
-    \caption{Panel: Evolución pregunta/respuesta (Interfaz: Tableau)}
+    \caption{Panel: Evolución pregunta/respuesta (interfaz: Tableau).}
     \label{figura:evo_post_anual}
 \end{figure}
 
@@ -1006,27 +1026,30 @@ Dentro de la publicación se pueden obtener datos adicionales que se encuentran 
         \centering
         \includegraphics[width=\textwidth]{img/cse/evo_posts_answers.png}
     \end{minipage}
-    \caption{Evolución preguntas/respuestas anuales (Interfaz Grafana)}
+    \caption{Evolución preguntas/respuestas anuales (interfaz Grafana).}
     \label{fig:Pq_an}
 \end{figure}
 
 
 
-Dentro de las publicaciones también podemos ver el indicador de favoritos, que contabiliza el número de veces que una publicación ha sido guardada por los usuarios de la plataforma. En la tabla \ref{table:top_5_cseducators} podemos ver un ejemplo del top 5 de los \emph{posts} con mayor número de favoritos de la comunidad con el \emph{link} al post y la puntuación otorgada por los usuarios y su título. 
+Dentro de las publicaciones también podemos ver el indicador de favoritos, que contabiliza el número de veces que una publicación ha sido guardada por los usuarios de la plataforma. En la tabla \ref{table:top_5_cseducators} podemos ver un ejemplo del top 5 de los \emph{posts} con mayor número de favoritos de la comunidad con el \emph{link} a la publicación y la puntuación otorgada por los usuarios y su título. 
 \begin{table}[ht]
 \centering
-    \begin{tabular}{@{} p{2cm} p{6cm} p{1cm} p{2cm} @{}}
-        \hline
+\renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{ @{\extracolsep{5pt}} @{} p{2cm} >{\raggedright\arraybackslash}p{6cm} 
+    >{\raggedleft\arraybackslash}p{1cm}
+    >{\raggedleft\arraybackslash}p{2cm} @{}}
+        \toprule
         Post link & Title & Score & Favorite \\
-        \hline
+        \midrule
         5023 & Why do we count starting from zero? & 187 & 84 \\ 
         4425 & Should I teach that 1 kB = 1024 bytes or 1000 bytes?  & 138 & 40 \\ 
         3881 & Is there some meaningful percentage of students who can't learn to program? & 113 & 37 \\ 
         4197 & How to explain the concept of a variable to a 9-year old? & 90 & 33 \\ 
         4717 & Is it better to lie to students or to be pedantic when teaching Intro CS? & 123 & 28 \\ 
-        \hline
+        \bottomrule
     \end{tabular}
-\caption{Top 5 Publicaciones favoritas de la comunidad CS Educators}
+\caption{Top 5 Publicaciones favoritas de la comunidad CS Educators.}
 \label{table:top_5_cseducators}
 \end{table}
 
@@ -1046,15 +1069,15 @@ Las etiquetas de la publicación sirven para realizar búsquedas más rápidas d
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.5\textwidth]{img/cse/tags_evo.png}
-    \caption{Panel: Evolución tags (Interfaz: Tableau)}
+    \includegraphics[width=0.8\textwidth]{img/cse/tags_evo.png}
+    \caption{Panel: Evolución \emph{tags} (interfaz: Tableau).}
     \label{figura:evo_tags_anual}
 \end{figure}
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.5\textwidth]{img/cse/evo_tags.png}
-    \caption{Panel: Evolución tags agregadas (Interfaz: Grafana)}
+    \includegraphics[width=0.8\textwidth]{img/cse/evo_tags.png}
+    \caption{Panel: Evolución \emph{tags} agregadas (interfaz: Grafana).}
     \label{figura:evo_tags}
 \end{figure}
 
@@ -1063,22 +1086,22 @@ Como es normal, las etiquetas y las visitas de una publicación dependen del per
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth]{img/cse/tags_distrib.png}
-    \caption{Panel: Distribución tags (Interfaz: Tableau)}
+    \includegraphics[width=0.8\textwidth]{img/cse/tags_distrib.png}
+    \caption{Panel: Distribución tags (interfaz: Tableau).}
     \label{figura:dist_tags}
 \end{figure}
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth]{img/cse/tags_2017.png}
-    \caption{ Distribución de etiquetas 2017 (Interfaz Tableau)}
+    \includegraphics[width=0.8\textwidth]{img/cse/tags_2017.png}
+    \caption{ Distribución de etiquetas 2017 (interfaz Tableau).}
     \label{figura:tags_2017}
 \end{figure}
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth]{img/cse/tags_2020.png}
-    \caption{ Distribución de etiquetas 2020 (Interfaz Tableau)}
+    \includegraphics[width=0.8\textwidth]{img/cse/tags_2020.png}
+    \caption{ Distribución de etiquetas 2020 (interfaz Tableau).}
     \label{figura:tags_2020}
 \end{figure}
 
@@ -1094,7 +1117,7 @@ Como es normal, las etiquetas y las visitas de una publicación dependen del per
 %       \centering
 %        \includegraphics[width=\textwidth]{img/cse/tags_2020.png}
 %    \end{minipage}
-%    \caption{ Distribución de etiquetas diferenciando periodo temporal (Interfaz Tableau)}
+%    \caption{ Distribución de etiquetas diferenciando periodo temporal (interfaz Tableau)}
 %    \label{fig:tags_2017-2020}
 %\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1111,13 +1134,14 @@ Lo primero a tratar es ¿qué son las \emph{bagdes}? Se trata de las insignias q
 Existen tres rangos de insignias: bronce, plata y oro. Las primeras son fáciles de obtener, suelen otorgarse a aquellos usuarios que enseñan a usar el sistema. Las segundas son aquellas que se obtienen por realizar publicaciones en la comunidad o realizar mejoras del sitio. Y, por último, las de oro, que representan una gran dedicación sobre la comunidad. 
 
 Ahora que sabemos que son las insignias, otra medida para ver la evolución que presenta una comunidad o su tendencia es contabilizar esas insignias a lo largo del tiempo. Como es habitual, en los inicios de una comunidad la cantidad de preguntas y respuestas es mayor, y así hemos estado viéndolo en las diferentes representaciones. En este caso ocurre lo mismo, como se ha indicado, las insignias de bronce (clase 3) se obtienen por el uso del sistema o por generar preguntas. Por tanto durante el primer año se otorgan la mayor cantidad de insignias de bronce y va disminuyendo en los siguientes años. Las insignias de plata (clase 2) y oro (clase 1) al ser más complicadas de conseguir, se mantienen con poca oscilación en el tiempo. 
+\medskip
 
-En la gráfica \ref{figura:badges} si que observamos un dato relevante, en torno al año 2021. Vemos que existe un incremento de insignias de bronce. Lo habitual es que fueran descendiendo como se observa en los años previos. Como hemos indicado \emph{cseducators} es una comunidad para profesionales de la educación, durante los años 2020 y 2021, la educación ha tenido que adaptarse y trabajar de manera online, por lo que puede que esta situación implique un uso mayor de la comunidad y por ello se vuelva a ver el incremento de insignias dentro de la comunidad.
+En la gráfica \ref{figura:badges} sí que observamos un dato relevante, en torno al año 2021. Vemos que existe un incremento de insignias de bronce. Lo habitual es que fueran descendiendo como se observa en los años previos. Como hemos indicado \emph{cseducators} es una comunidad para profesionales de la educación, durante los años 2020 y 2021, la educación ha tenido que adaptarse y trabajar de manera online, por lo que puede que esta situación implique un uso mayor de la comunidad y por ello se vuelva a ver el incremento de insignias dentro de la comunidad.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth]{img/cse/badges.png}
-    \caption{Panel: Distribución badges (Interfaz: Tableau)}
+    \caption{Panel: Distribución badges (interfaz: Tableau).}
     \label{figura:badges}
 \end{figure}
 
@@ -1126,40 +1150,73 @@ En la tabla \ref{tab:top_5_tags_cse} se muestran las insignias que más veces ha
 
 \begin{table}[ht]
     \begin{center}
-        \begin{tabular}{ c  l  l  }
-        \hline
-          \textbf{Class} & \textbf{Badge} & \textbf{Total} \\ \hline
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{ @{\extracolsep{4pt}} @{} p{2cm} 
+    >{\raggedright\arraybackslash}p{4cm} @{} 
+    >{\raggedleft\arraybackslash}p{2cm} @{}}
+        \toprule
+          \textbf{Class} & \textbf{Badge} & \textbf{Total} \\ 
+          \midrule
             \multirow{5}{*}{Gold} & Famous Question & 36 \\ 
             & Fanatic & 33  \\ 
             & Great Answer & 7 \\
             & Populist & 7 \\ 
             & Great Question & 4 \\
-            \hline
+            \midrule
             \multirow{5}{*}{Silver} & Yearling & 621 \\ 
             & Good Answer & 113  \\ 
             & Notable Question & 124 \\
             & Good Question & 62 \\
             & Enthusiast & 58 \\ 
-            \hline
+            \midrule
             \multirow{5}{*}{Bronze} & Autobiographer & 4819 \\ 
             & Supporter & 2811 \\
             & Teacher & 909 \\ 
             & Informed & 649 \\ 
             & Editor & 556 \\
+            \bottomrule
         \end{tabular}
-        \caption{Insignias más populares CS Educators}
+        \caption{Insignias más populares CS Educators.}
         \label{tab:top_5_tags_cse}
     \end{center}
 \end{table}
+
+%%\begin{table}[ht]
+%    \begin{center}
+%        \begin{tabular}{ c  l  l  }
+%        \hline
+%          \textbf{Class} & \textbf{Badge} & \textbf{Total} \\ \hline
+%            \multirow{5}{*}{Gold} & Famous Question & 36 \\ 
+%            & Fanatic & 33  \\ 
+%            & Great Answer & 7 \\
+%            & Populist & 7 \\ 
+%            & Great Question & 4 \\
+%            \hline
+%            \multirow{5}{*}{Silver} & Yearling & 621 \\ 
+%            & Good Answer & 113  \\ 
+%            & Notable Question & 124 \\
+%            & Good Question & 62 \\
+%            & Enthusiast & 58 \\ 
+%            \hline
+%            \multirow{5}{*}{Bronze} & Autobiographer & 4819 \\ 
+%            & Supporter & 2811 \\
+%            & Teacher & 909 \\ 
+%            & Informed & 649 \\ 
+%            & Editor & 556 \\
+%        \end{tabular}
+%        \caption{Insignias más populares CS Educators}
+%        \label{tab:top_5_tags_cse}
+%    \end{center}
+%\end{table}
 
 \clearpage
 
 \section{Experimento Tex}
 \label{chap:exper_stack}
 
-Al igual que en el dataset anterior crearemos la base de datos (\emph{tex}) en MySQL que utilizaremos en este experimento. Lanzaremos el script \texttt{load\_into\_pg.py} que descarga los ficheros, parsea los datos y los carga sobre la base creada.
+Al igual que en el \textit{dataset} anterior crearemos la base de datos (\emph{tex}) en MySQL que utilizaremos en este experimento. Lanzaremos el \emph{script} \texttt{load\_into\_pg.py} que descarga los ficheros, parsea los datos y los carga sobre la base creada.
 
-Con el dataset extraído de Stack Exchange comentado, analizaremos nuevamente el comportamiento de las herramientas y analizaremos la comunidad en base a estos datos. 
+Con el \textit{dataset} extraído de Stack Exchange comentado, analizaremos nuevamente el comportamiento de las herramientas y analizaremos la comunidad en base a estos datos. 
 
 
 \subsection{Usuarios}
@@ -1167,12 +1224,12 @@ En esta sección trabajaremos con los datos de la tabla \emph{users}, obteniendo
 
 Representamos el total de usuarios existentes, como podemos observar en la gráfica \ref{figura:total_users_tex}, y a continuación mostramos la evolución y el crecimiento que ha presentado la plataforma con el paso del tiempo. 
 
-Los datos tienen una fecha de extracción del 6 de junio de 2022, hasta este día podemos ver que hay un total de 223506 usuarios. 
+Los datos tienen una fecha de extracción del 6 de junio de 2022, hasta este día podemos ver que hay un total de 223.506 usuarios. 
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.5\textwidth]{img/tex/Total_usuarios_tex.png}
-    \caption{Panel: Total de usuarios (Interfaz: Grafana)}
+    \includegraphics[width=0.6\textwidth]{img/tex/Total_usuarios_tex.png}
+    \caption{Panel: Total de usuarios (interfaz: Grafana).}
     \label{figura:total_users_tex}
 \end{figure}
 
@@ -1181,8 +1238,8 @@ Al igual que en experimento anterior, este dato total aporta una visión general
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.6\textwidth]{img/tex/evolucion_usuarios_tex.png}
-    \caption{Panel: Evolución anual de usuarios (Interfaz: Grafana)}
+    \includegraphics[width=0.75\textwidth]{img/tex/evolucion_usuarios_tex.png}
+    \caption{Panel: Evolución anual de usuarios (interfaz: Grafana).}
     \label{figura:evo_users_tex}
 \end{figure}
 
@@ -1195,14 +1252,14 @@ Si vemos detenidamente la gráfica \ref{figura:evo_users_trim_tex}, que correspo
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.75\textwidth]{img/tex/evolucion_usuarios_años_tex_1.png}
-    \caption{Panel: Evolución trimestral de usuarios (Interfaz: Tableau)}
+    \caption{Panel: Evolución trimestral de usuarios (interfaz: Tableau).}
     \label{figura:evo_users_trim_tex}
 \end{figure}
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.75\textwidth]{img/tex/evolucion_usuarios_años_tex_2.png}
-    \caption{Panel: Evolución trimestral de usuarios (Interfaz: Tableau)}
+    \caption{Panel: Evolución trimestral de usuarios (interfaz: Tableau).}
     \label{figura:evo_users_trim_tex_2}
 \end{figure}
 
@@ -1210,8 +1267,8 @@ Con los datos extraídos y analizados en la herramienta de Tableau, podemos real
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.6\textwidth]{img/tex/Tendencia_pronostico_TEX.png}
-    \caption{Panel: Tendencia y pronóstico 2022 TEX (Interfaz: Tableau)}
+    \includegraphics[width=0.8\textwidth]{img/tex/Tendencia_pronostico_TEX.png}
+    \caption{Panel: Tendencia y pronóstico 2022 TEX (interfaz: Tableau).}
     \label{figura:tendencia_tex}
 \end{figure}
 
@@ -1219,8 +1276,8 @@ Una de las opciones de visualización que nos ofrecen las herramientas utilizada
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.75\textwidth]{img/tex/Maps_tex.png}
-    \caption{Panel: Localización de usuarios Tex (Interfaz: Tableau)}
+    \includegraphics[width=\textwidth]{img/tex/Maps_tex.png}
+    \caption{Panel: Localización de usuarios Tex (interfaz: Tableau).}
     \label{figura:MAP_users_tex}
 \end{figure}
 
@@ -1237,34 +1294,36 @@ En la figura \ref{figura:evo_post_anual_tex} se muestra que durante los primeros
 \begin{figure}[ht]
    \centering
     \includegraphics[width=0.8\textwidth]{img/tex/evo_posts_anual_tex.png}
-    \caption{Panel: Evolución pregunta/respuesta (Interfaz: Tableau)}
+    \caption{Panel: Evolución pregunta/respuesta (interfaz: Tableau).}
     \label{figura:evo_post_anual_tex}
 \end{figure}
 
 Dentro de la publicación se pueden obtener datos adicionales relacionados. Uno de estos valores sería la puntuación, que contabiliza el número de votos positivos menos el número de votos negativos, obteniendo así el valor que presenta la publicación. 
 
-También podemos ver el indicador de favoritos, que contabiliza el número de veces que una publicación ha sido guardada por los usuarios de la plataforma. En la tabla \ref{table:top_5_tex} podemos ver un ejemplo del top 5 de los \emph{posts} con mayor número de favoritos de la comunidad con el \emph{link} al post y la puntuación otorgada por los usuarios y su título. 
+También podemos ver el indicador de favoritos, que contabiliza el número de veces que una publicación ha sido guardada por los usuarios de la plataforma. En la tabla \ref{table:top_5_tex} podemos ver un ejemplo del top 5 de los \emph{posts} con mayor número de favoritos de la comunidad con el \emph{link} a su publicación y la puntuación otorgada por los usuarios y su título. 
 \begin{table}[ht]
 \centering
-    \begin{tabular}{@{} p{2cm} p{6cm} p{1cm} p{2cm} @{}}
-        \hline
+\renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{ @{\extracolsep{5pt}} @{} p{2cm} >{\raggedright\arraybackslash}p{6cm} 
+    >{\raggedleft\arraybackslash}p{1cm}
+    >{\raggedleft\arraybackslash}p{2cm} @{}}
+        \toprule
         Post link & Title & Score & Favorite \\
-        \hline
+        \midrule
         4425 & Is there a way to have coloured hyperref hyperlinks in the PDF \ldots & 94 & 46 \\
         2547 & Margin Figures/Captions & 26 & 12 \\
         2897 & Where to place custom beamer themes & 30 & 12 \\
         3881 & Formatting a paragraph to look like a section & 21 & 5 \\
         5023 & Aligning an enumeration item to the top of a tikzpicture & 17 & 4 \\ 
-        \hline
+        \bottomrule
     \end{tabular}
-\caption{Top 5 Publicaciones favoritas de la comunidad Tex}
+\caption{Top 5 Publicaciones favoritas de la comunidad Tex.}
 \label{table:top_5_tex}
 \end{table}
 
 %******************************
 %Unanswered Questions
 %questions with no upvoted or accepted answers
-%Meter la info de publicaciones sin respuesta.
 %******************************
 
 
@@ -1280,15 +1339,15 @@ Por otro lado, en la imagen \ref{figura:evo_tags_tex} se ve representado el \tex
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.6\textwidth]{img/tex/tags_evo_tex.png}
-    \caption{Panel: Top 10 etiquetas (Interfaz: Grafana)}
+    \includegraphics[width=0.8\textwidth]{img/tex/tags_evo_tex.png}
+    \caption{Panel: Top 10 etiquetas (interfaz: Grafana).}
     \label{figura:top10_tags_tex}
 \end{figure}
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.6\textwidth]{img/tex/evo_tags_tex.png}
-    \caption{Panel: Top 10 etiquetas conjuntas más visualizadas (Interfaz: Grafana)}
+    \includegraphics[width=0.8\textwidth]{img/tex/evo_tags_tex.png}
+    \caption{Top 10 Etiquetas agregadas más vistas (interfaz: Grafana).}
     \label{figura:evo_tags_tex}
 \end{figure}
 
@@ -1296,18 +1355,18 @@ Podemos desglosar y comparar estos datos en el mismo mes, pero de diferente peri
 
 En el año 2016 las etiquetas más utilizadas hacen referencia a bibliotecas, formateo de texto, diseño\ldots mientras que en la actualidad se hace uso de etiquetas sobre los tipos de gráficas, fuentes de texto \ldots En otras palabras, en los primeros años se publica en la comunidad sobre la información general, es decir, cómo aplicar los diferentes sistemas tipográficos o cómo dar forma a los textos. Mientras que en la actualidad se observa mediante las etiquetas que estos sistemas de tipografía son más utilizados entre la población, ya que entre las \emph{tags} más usadas se alude a diferentes formas de visualización más especificas.
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=\textwidth]{img/tex/Compare_tags_april_tex.png}
-    \caption{Comparación de etiquetas Abril 2016 - Abril 2022 (Interfaz: Grafana)}
-    \label{figura:comp_tags_tex}
-\end{figure}
+%\begin{figure}[ht]
+%    \centering
+%    \includegraphics[width=\textwidth]{img/tex/Compare_tags_april_tex.png}
+%    \caption{Comparación de etiquetas abril 2016 - abril 2022 (interfaz: Grafana)}
+%    \label{figura:comp_tags_tex}
+%\end{figure}
 
 
 
 \subsection{Badges}
 
-Como se ha identificado en el experimento anterior las \emph{bagdes}, son las insignias que se otorgan a los usuarios dando reconocimiento a las distintas contribuciones dentro de la comunidad. 
+Como se ha identificado en el experimento anterior, las \emph{bagdes} son las insignias que se otorgan a los usuarios dando reconocimiento a las distintas contribuciones dentro de la comunidad. 
 Se basa también en los mismos tres rangos de insignias: bronce, plata y oro. Las primeras más sencillas de obtener, las segundas que se obtienen por realizar publicaciones o mejoras del sitio. Y, por último, las de oro, que representan una gran dedicación en la comunidad. 
 
 En la gráfica \ref{figura:badges_tex} vemos la evolución de las insignias diferenciadas por cada clase. Esta plataforma, como indicamos al principio de la sección, contiene aproximadamente 223 mil usuarios y las insignias que se han otorgado a lo largo del tiempo acreditan que se trata de una comunidad activa con gran cantidad de contribuciones por parte de los usuarios. 
@@ -1315,24 +1374,24 @@ En la gráfica \ref{figura:badges_tex} vemos la evolución de las insignias dife
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\textwidth]{img/tex/badges_tex.png}
-    \caption{Panel: Distribución badges asociadas a Tags (Interfaz: Grafana)}
+    \caption{Panel: Distribución \emph{badges} asociadas a \emph{Tags} (interfaz: Grafana).}
     \label{figura:badges_tex}
 \end{figure}
 
 
-Dentro de estas clases de insignias podemos particularizarlas en dos grupos: las asociadas a \emph{tags} y otras asociadas a los logros obtenidos. En el gráfico \ref{figura:badges_tag_tex_dist} observamos el porcentaje de asignación de las insignias relacionadas con las etiquetas divididas por cada una de las clases. Centrándonos en esos datos y realizando desglose de esos datos, podemos obtener el listado (top 10) de estas etiquetas como se muestra en la imagen \ref{figura:badges_tags_data_tex}. Vemos que, al igual que en las tags, una de las insignias más recurrentes es \emph{tikz-pgf}, además vemos que la mayoría de ellas se repiten, ya que es habitual su uso dentro de esta comunidad.
+Dentro de estas clases de insignias podemos particularizarlas en dos grupos: las asociadas a \emph{tags} y otras asociadas a los logros obtenidos. En el gráfico \ref{figura:badges_tag_tex_dist} observamos el porcentaje de asignación de las insignias relacionadas con las etiquetas divididas por cada una de las clases. Centrándonos en esos datos y realizando desglose de esos datos, podemos obtener el listado (top 10) de estas etiquetas como se muestra en la imagen \ref{figura:badges_tags_data_tex}. Vemos que, al igual que en las etiquetas, una de las insignias más recurrentes es \emph{tikz-pgf}, además vemos que la mayoría de ellas se repiten, ya que es habitual su uso dentro de esta comunidad.
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.6\textwidth]{img/tex/Badges_tag_tex_dist.png}
-    \caption{Porcentaje de insignias asociadas a etiquetas (Interfaz: Grafana)}
+    \includegraphics[width=0.8\textwidth]{img/tex/Badges_tag_tex_dist.png}
+    \caption{Porcentaje de insignias asociadas a etiquetas (interfaz: Grafana).}
     \label{figura:badges_tag_tex_dist}
 \end{figure}
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.6\textwidth]{img/tex/Badges_tag_tex_data.png}
-    \caption{Comparación de etiquetas Abril 2016 - Abril 2022 (Interfaz: Grafana)}
+    \includegraphics[width=\textwidth]{img/tex/Badges_tag_tex_data.png}
+    \caption{Top 10: Insignias asociadas a etiquetas más utilizadas (interfaz: Grafana).}
     \label{figura:badges_tags_data_tex}
 \end{figure}
 
@@ -1341,7 +1400,7 @@ Por otra parte, tenemos las insignias que se entregan a los usuarios por los log
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.6\textwidth]{img/tex/Badges_tex_dist.png}
-    \caption{Porcentaje de insignias asociadas a etiquetas (Interfaz: Grafana)}
+    \caption{Porcentaje de insignias asociadas a etiquetas (interfaz: Grafana).}
     \label{figura:badges_tex_dist}
 \end{figure}
 
@@ -1349,28 +1408,32 @@ En la tabla \ref{tab:top_5_tags_tex} se muestra el \textbf{Top 5} por cada clase
 
 \begin{table}[ht]
     \begin{center}
-        \begin{tabular}{ c  l  l  }
-        \hline
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{ @{\extracolsep{4pt}} @{} p{2cm} 
+    >{\raggedright\arraybackslash}p{4cm} @{} 
+    >{\raggedleft\arraybackslash}p{2cm} @{}}
+        \toprule
           \textbf{Class} & \textbf{Badge} & \textbf{Total} \\ \hline
             \multirow{5}{*}{Gold} & Famous Question & 10501 \\ 
             & Great Answer & 816 \\
             & Great Question & 636 \\
             & Fanatic & 616  \\ 
             & Electorate & 267 \\ 
-            \hline
+            \midrule
             \multirow{5}{*}{Silver} & Yearling & 38222 \\ 
             & Notable Question & 34061 \\
             & Enlightened & 13933 \\
             & Good Answer & 7662  \\ 
             & Necromancer & 7281 \\ 
-            \hline
+            \midrule
             \multirow{5}{*}{Bronze} & Popular Question & 69965 \\ 
             & Student & 66778 \\
             & Supporter & 57423 \\
             & Autobiographer & 54950 \\ 
             & Scholar & 43479 \\ 
+            \bottomrule
         \end{tabular}
-        \caption{Insignias más populares - TEX}
+        \caption{Insignias más populares - TEX.}
         \label{tab:top_5_tags_tex}
     \end{center}
 \end{table}
@@ -1382,38 +1445,38 @@ Se puede observar que la reputación y las insignias de los usuarios están rela
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{img/tex/Popular_users_badges_tex.png}
-    \caption{Usuarios con más insignias (Interfaz: Tableau)}
+    \includegraphics[width=0.7\textwidth]{img/tex/Popular_users_badges_tex.png}
+    \caption{Usuarios con más insignias (interfaz: Tableau).}
     \label{figura:badges_tex_top}
 \end{figure}
 
 
-\begin{figure}[ht]
- \centering
-  \subfloat[Gold]{
-   \label{f:oro}
-    \includegraphics[width=0.3\textwidth]{img/tex/Popular_users_badges_tex_1.png}}
-  \subfloat[Silver]{
-   \label{f:plata}
-    \includegraphics[width=0.3\textwidth]{img/tex/Popular_users_badges_tex_2.png}}
-  \subfloat[Bronze]{
-   \label{f:bronce}
-    \includegraphics[width=0.3\textwidth]{img/tex/Popular_users_badges_tex_3.png}}
- \caption{Usuarios con más insignias por clase (Interfaz: Tableau)}
- \label{figura:badges_tex_class_top}
-\end{figure}
+% \begin{figure}[ht]
+%  \centering
+%   \subfloat[Gold]{
+%   \label{f:oro}
+%     \includegraphics[width=0.3\textwidth]{img/tex/Popular_users_badges_tex_1.png}}
+%   \subfloat[Silver]{
+%   \label{f:plata}
+%     \includegraphics[width=0.3\textwidth]{img/tex/Popular_users_badges_tex_2.png}}
+%   \subfloat[Bronze]{
+%   \label{f:bronce}
+%     \includegraphics[width=0.3\textwidth]{img/tex/Popular_users_badges_tex_3.png}}
+%  \caption{Usuarios con más insignias por clase (interfaz: Tableau)}
+%  \label{figura:badges_tex_class_top}
+% \end{figure}
 
 \clearpage 
 
 \section{Comparativa de comunidades}
 \label{chap:compare_community}
 
-Durante este capítulo hemos desarrollado diferentes visualizaciones que nos permiten conocer ligeramente cada comunidad. En el caso del dataset de Computer Science Educators hemos comprobado que se trata de una comunidad de una pequeña cantidad de usuarios y poca actividad. La mayoría de los usuarios, publicaciones y contribuciones, tanto de preguntas como respuestas, fueron registrados en los primeros años y van reduciéndose en el tiempo. En cambio, en el segundo dataset, correspondiente con la comunidad de Tex, hemos notado que el registro presenta una tendencia creciente tanto a nivel de usuarios como publicaciones. Esto nos indica que se trata de una plataforma activa y que aun continúa en crecimiento. El número de usuarios hemos visto que aumenta por cada periodo y se pronostica que seguirá creciendo según la tendencia actual. Este mismo comportamiento se produce en las publicaciones.
+Durante este capítulo hemos desarrollado diferentes visualizaciones que nos permiten conocer ligeramente cada comunidad. En el caso del \textit{dataset} de Computer Science Educators hemos comprobado que se trata de una comunidad de una pequeña cantidad de usuarios y poca actividad. La mayoría de los usuarios, publicaciones y contribuciones, tanto de preguntas como respuestas, fueron registrados en los primeros años y van reduciéndose en el tiempo. En cambio, en el segundo \textit{dataset}, correspondiente con la comunidad de Tex, hemos notado que el registro presenta una tendencia creciente tanto a nivel de usuarios como publicaciones. Esto nos indica que se trata de una plataforma activa y que aun continúa en crecimiento. El número de usuarios hemos visto que aumenta por cada periodo y se pronostica que seguirá creciendo según la tendencia actual. Este mismo comportamiento se produce en las publicaciones.
 
-Tomando como referencia las etiquetas existentes, otro de los factores utilizados para las visualizaciones, hemos observado que, en la comunidad de CS Educators, principalmente se usan etiquetas conjuntas que hacen que las búsquedas y las publicaciones estén bastante relacionadas. En el caso de las insignias, podemos identificar que no existen grandes contribuciones o logros de manera habitual. El usuario que tiene más reputación en la plataforma tiene 1293 insignias de las tres clases.
+Tomando como referencia las etiquetas existentes, otro de los factores utilizados para las visualizaciones, hemos observado que, en la comunidad de CS Educators, principalmente se usan etiquetas conjuntas que hacen que las búsquedas y las publicaciones estén bastante relacionadas. En el caso de las insignias, podemos identificar que no existen grandes contribuciones o logros de manera habitual. El usuario que tiene más reputación en la plataforma tiene 1.293 insignias de las tres clases.
 En cambio, en la comunidad de Tex hemos comprobado que existe diversidad de etiquetas, que son utilizadas tanto de manera conjunta como de forma individual y además, estas etiquetas están presentes en los usuarios cuando se obtienen sus insignias. Aparte, de manera individual, por cada usuario hemos podido ver que se asignan múltiples insignias y podríamos realizar diversos \emph{rankings} ya que se otorgan diariamente incrementando la reputación de los usuarios. 
 
-Se ha trabajado con otro de los campos que ofrece el registro de usuarios, la localización. En el primer dataset, teníamos en torno a dos mil datos de localización, el filtrado es relativamente sencillo aunque siga teniendo que realizarse un preprocesado debido a los múltiples valores existentes sobre un mismo lugar.  En el dataset de Tex, al tener un mayor número de usuarios, disponemos de más información y al tener más información, el filtrado de datos es más complicado. Por esto mismo, aunque se haya podido visualizar sobre la interfaz de Tableau, los datos mostrados en el mapa no son del todo fiables, requiere de mayor preprocesado. 
+Se ha trabajado con otro de los campos que ofrece el registro de usuarios, la localización. En el primer \textit{dataset}, teníamos en torno a dos mil datos de localización, el filtrado es relativamente sencillo aunque siga teniendo que realizarse un preprocesado debido a los múltiples valores existentes sobre un mismo lugar.  En el \textit{dataset} de Tex, al tener un mayor número de usuarios, disponemos de más información y al tener más información, el filtrado de datos es más complicado. Por esto mismo, aunque se haya podido visualizar sobre la interfaz de Tableau, los datos mostrados en el mapa no son del todo fiables, requiere de mayor preprocesado. 
 
 
 \cleardoublepage
@@ -1431,13 +1494,13 @@ En este capítulo se expondrán las conclusiones finales del proyecto y los obje
 \section{Consecución de objetivos}
 \label{sec:consecucion-objetivos}
 
-En este proyecto indicamos dos objetivos principales. Por un lado, se ha conseguido analizar el conjunto de datos extraídos de la plataforma de Stack Exchange, para ello definimos el alcance del proyecto, se realizó la recolección, parseado e inserción de los datos, mediante el desarrollo de un programa que nos permite realizar estos pasos. Y por último, la visualización de cada base de datos en las herramientas software, centrándonos en dos de las herramientas más utilizadas en la actualidad como son Tableau y Grafana para estudiar bases de datos temporales. 
+En este proyecto planteamos dos objetivos principales. Por un lado, se ha conseguido analizar el conjunto de datos extraídos de la plataforma de Stack Exchange. Para ello, definimos el alcance del proyecto, se realizó la recolección, parseado e inserción de los datos, mediante el desarrollo de un programa que nos permite realizar estos pasos. Por último, se desarrollaron medios para la visualización de cada base de datos, centrándonos en dos de las herramientas más utilizadas en la actualidad como son Tableau y Grafana para estudiar bases de datos temporales. 
 
-Por otra parte, de manera más específica nos propusimos también evaluar estas herramientas en base una serie criterios de comparación. 
+Por otra parte, de manera más específica nos propusimos también evaluar estas dos herramientas en base una serie criterios de comparación. 
 
 Lo primero que se observó al realizar el estudio de las herramientas, es la diferencia entre Tableau y Grafana. La primera, realmente es un conjunto de herramientas de inteligencia de negocios que presenta un licenciamiento y un coste asociado dependiendo del tipo de usuarios y las funcionalidades que se requieran. En nuestro caso, hemos realizado este proyecto mediante una prueba gratuita, que se ofrece para conocer las herramientas. En cambio Grafana, aunque tiene una versión comercial, es un software de código libre por tanto no requiere una licencia ni coste adicional. 
 
-Tras realizar el análisis de los datos hemos podido identificar que Tableau presenta una interfaz de usuario mucho más sencilla y no es necesario conocer el flujo completo de datos para poder realizar un análisis simple. Además, el preprocesado se puede optimizar creando flujos previos mediante la herramienta Tableau Prep y ser reutilizados en otros datasets. En cambio, Grafana, presenta una interfaz menos amigable y basada en \gls{plugin}, es recomendable tener un mayor conocimiento del conjunto de datos para poder realizar las mismas gráficas.
+Tras realizar el análisis de los datos hemos podido identificar que Tableau presenta una interfaz de usuario mucho más sencilla y no es necesario conocer el flujo completo de datos para poder realizar un análisis simple. Además, el preprocesado se puede optimizar creando flujos previos mediante la herramienta Tableau Prep y ser reutilizados en otros \textit{datasets}. En cambio, Grafana, presenta una interfaz menos amigable y basada en \gls{plugin}, es recomendable tener un mayor conocimiento del conjunto de datos para poder realizar las mismas gráficas.
 De cara al tamaño de las muestras ambas herramientas son compatibles con cualquier magnitud de datos y ofrecen prácticamente las mismas opciones de visualización. 
 
 Podemos destacar el problema encontrado en el gráfico en forma de mapas, es significativo con nuestro conjunto de datos ya que este valor de campo es texto libre. Grafana permite visualizar los datos siempre que se representen en forma de función geográfica (latitud y longitud), para ello requeríamos de un reprocesado de nuestros datos, por lo que por tiempos no ha sido posible aplicar esta visualización en esta herramienta. Mientras que Tableau geocodifica las localizaciones de manera directa si son países, ubicaciones, códigos postales. Por tanto en nuestro caso, después de un pequeño preprocesado para agrupar los datos, se han podido mostrar sin problemas.
@@ -1468,7 +1531,7 @@ En el desarrollo de este proyecto, han sido de utilidad los conocimientos adquir
 Durante el desarrollo de este Trabajo de Fin de Grado, se pueden destacar las siguientes lecciones aprendidas:
 
 \begin{enumerate}
-  \item Profundizar en datasets de distintas magnitudes, lo que me ha permitido ampliar los conocimientos aprendidos durante las asignaturas de la carrera.
+  \item Profundizar en \textit{datasets} de distintas magnitudes, lo que me ha permitido ampliar los conocimientos aprendidos durante las asignaturas de la carrera.
   \item Incrementar mis habilidades de programación en \emph{Python} manejando estructuras XML y en el tratamiento de bases de datos MySQL.
   \item Conocer y aprender la programación en \LaTeX, ya que hasta la realización de esta memoria, no lo había utilizado.
   \item Ampliar el conocimiento en la visualización de datos y la importancia del procesamiento de datos para lograr obtener datos relevantes y poder interpretar los resultados de manera correcta. 
@@ -1479,12 +1542,12 @@ Durante el desarrollo de este Trabajo de Fin de Grado, se pueden destacar las si
 \label{sec:trabajos_futuros}
 El posible desarrollo futuro de este proyecto requeriría, en primer lugar, de un preprocesado de datos mejorado, para evitar los problemas encontrados en la visualización de estos en las gráficas de geolocalización. 
 
-También se puede ampliar la información existente los datasets, ya que contienen el esquema completo de estas comunidades contienen mucha información relacional que no se ha mostrado durante este proyecto y aportan datos útiles para conocer las comunidades.
+También se puede ampliar la información existente los \textit{datasets}, ya que contienen el esquema completo de estas comunidades contienen mucha información relacional que no se ha mostrado durante este proyecto y aportan datos útiles para conocer las comunidades.
 
 Podría sería interesante poder comparar los resultados obtenidos con otras herramientas existentes como Splunk o introducir Graphite que permite, entre otras cosas, agregar funciones, combinar series temporales, modificar y/o añadir parámetros.
 
 También sería interesante automatizar la descarga de los datos de forma que siempre se encontrasen actualizadas en las herramientas y tener un seguimiento real-time de las medidas más interesantes de las comunidades de pregunta y respuesta.
-
+\cleardoublepage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % GLOSARIO(S) %
@@ -1498,11 +1561,45 @@ También sería interesante automatizar la descarga de los datos de forma que si
 % APÉNDICE(S) %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\cleardoublepage
-%\appendix
-%\chapter{Manual de usuario}
-%\label{app:manual}
 
+\appendix
+\chapter{Figuras adicionales}
+\label{fig:extra}
+\begin{sidewaysfigure}
+    \centering
+    \includegraphics[width=0.62\textwidth, keepaspectratio]{img/modelo_entidad_relacion.png}
+    \caption{Diagrama de entidad-relación (\gls{eer}) de la Base de Datos.}
+    \label{fig:modelo_entidad_relacion}
+\end{sidewaysfigure}
+
+\newpage
+\begin{figure}[ht]
+    \centering
+     \subfloat[Abril - 2016]{
+        \includegraphics[width=0.8\textwidth]{img/tex/abril-2016_tex.png}
+     }
+    \vspace{1.5cm}
+    \subfloat[Abril - 2022]{
+        \includegraphics[width=0.8\textwidth]{img/tex/abril-2022_tex.png}
+     }
+    \caption{Comparación de etiquetas abril 2016 - abril 2022 (interfaz: Grafana)}
+    \label{figura:comp_tags_tex}
+\end{figure}
+
+\newpage
+
+\begin{figure}
+    \centering
+    \subfloat[User Badges - Gold]{
+        \includegraphics[width=0.5\textwidth]{img/tex/Popular_users_badges_tex_1.png}}
+    \vspace{1cm}
+    \subfloat[User Badges - Silver]{
+        \includegraphics[width=0.5\textwidth]{img/tex/Popular_users_badges_tex_2.png}}
+    \subfloat[User Badges - Bronze]{
+        \includegraphics[width=0.5\textwidth]{img/tex/Popular_users_badges_tex_3.png}}
+    \caption{Usuarios con más insignias por clase (interfaz: Tableau).}
+    \label{figura:badges_tex_class_top}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

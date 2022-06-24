@@ -575,7 +575,7 @@ Para el desarrollo de este proyecto se han utilizado diferentes tecnologías, la
 
 \section{Atom} 
 \label{sec:atom}
-Atom\footnote{\url{https://atom.io/}} es un editor de código fuente especializado en la programación. Compatible con los lenguajes más populares, permite escribir código y programar desde tu PC con Windows, Linux o macOS, con soporte para múltiples \gls{plugin} escritos en Node.js y control de versiones Git integrado, desarrollado por GitHub. 
+Atom\footnote{\url{https://atom.io/}} es un editor de código fuente especializado en la programación. Compatible con los lenguajes más habituales, permite escribir código y programar en los diferentes sistemas operativos como Windows, Linux o macOS, con soporte para múltiples \gls{plugin} escritos en Node.js y control de versiones Git integrado, desarrollado por GitHub. 
 
 La mayor parte de los paquetes tienen licencias de software libre y está desarrollados y mantenidos por la comunidad de usuarios. Atom está basado en Electron (anteriormente conocido como Atom Shell), un \textit{framework} que permite crear aplicaciones de escritorio multiplataforma. También puede ser utilizado como un \gls{ide}.
 
@@ -586,14 +586,12 @@ La mayor parte de los paquetes tienen licencias de software libre y está desarr
         \label{figura:ATOM}
     \end{figure}
 
-Personalmente, he optado por Atom porque es el editor que suelo utilizar para todos
-mis proyectos tanto personales como laborales. 
+Personalmente, he optado por Atom porque es el editor que suelo utilizar para todos mis proyectos tanto personales como laborales. 
 
 \section{Python} 
 \label{sec:Python}
 
-Python~\cite{van2007python} es un lenguaje de programación interpretado y dinámico, de código abierto \gls{oss}, que
-soporta tanto el paradigma de la programación orientada a objetos (OOP) como el de la programación funcional.
+Python~\cite{van2007python} es un lenguaje de programación interpretado y dinámico, de código abierto \gls{oss}, que soporta tanto el modelo de la programación orientada a objetos (OOP) como el de la programación funcional.
 
 Se ha elegido este lenguaje de programación para el parseado de datos extraídos de la plataforma de Stack Exchange\footnote{\url{https://stackexchange.com/}}. Además, Python, ofrece múltiples paquetes para la conexión con bases de datos. En este proyecto se ha utilizado el conector oficial de Oracle para MySQL, mysql-connector-python\footnote{\url{https://dev.mysql.com/doc/connector-python/en/connector-python-introduction.html}}, que cumple con la DB API 2.0 de Python~\cite{Python}.
 
@@ -604,9 +602,9 @@ El sistema gestor de la base de datos elegido para dar soporte a la persistencia
 
 MySQL es uno de los gestores de bases de datos \gls{sql} más popular en la actualidad. Es desarrollado, distribuido y soportado por Oracle. Se trata de un \gls{oss}, que permite que pueda ser modificado dependiendo de las necesidades de cada usuario. El software de MySQL está basado en GPL (GNU General Public License) que define qué y qué no se debe hacer con el software en diferentes situaciones.
 
-MySQL, desde la versión 5.6, proporciona una herramienta denominada  \textit{MySQLWorkbench}~\cite{krogh2020mysql}. Es una herramienta visual de diseño de bases de datos que integra desarrollo de software, administración de bases de datos, diseño de bases de datos, gestión y mantenimiento para el sistema de base de datos MySQL.
+MySQL, desde la versión 5.6, proporciona una herramienta denominada  \textit{MySQLWorkbench}~\cite{krogh2020mysql}. Se trata de una herramienta visual de diseño de bases de datos que integra el desarrollo de software, la administración y diseño de las bases de datos, la gestión y el mantenimiento del sistema en MySQL.
 
-Se ha utilizado MySQL ya que es un source nativo tanto en Grafana como en Tableau, además ofrece múltiples ventajas, donde podemos destacar su alto rendimiento, bajo consumo de recursos, soporte a múltiples Sistemas Operativos y una alta securización de los datos.
+Se ha utilizado MySQL ya que es un \emph{source} nativo tanto en Grafana como en Tableau, además ofrece múltiples ventajas, donde podemos destacar su alto rendimiento, bajo consumo de recursos y una alta securización de los datos.
 
 \section{Tecnologías de visualización y análisis} 
 \label{sec:Tenologias_va}
@@ -616,8 +614,7 @@ Se ha utilizado MySQL ya que es un source nativo tanto en Grafana como en Tablea
 \textbf{Grafana}~\cite{chakraborty2021grafana} es una herramienta \gls{oss} para la obtención de datos, almacenamiento, visualización y análisis.
 Se conecta con todas las fuentes de datos posibles, como \textit{Graphite, Prometheus, Influx DB, ElasticSearch, MySQL, PostgreSQL}, y otros.
 
-Grafana, mediante peticiones SQL en tiempo real a la base de datos, representa la
-información obtenida en Paneles, que se considera cualquier elemento que represente de forma gráfica la información, y Dashboards, que se trata de una agrupación de paneles, de distinto tipo como, por ejemplo, gráficas de tiempo, sectores circulares, diagramas de barras, tablas, mapas, etc.
+Grafana, mediante peticiones SQL en tiempo real a la base de datos, representa la información en Paneles, que se considera cualquier elemento que represente de forma gráfica la información, y \textit{Dashboards}, que se trata de una agrupación de paneles, de distinto tipo como, por ejemplo, gráficas de tiempo, sectores circulares, diagramas de barras, tablas, mapas, etc.
 
 En la imagen \ref{figura:Grafana} se muestra  el panel principal de la interfaz gráfica de Grafana tras haber realizado el \emph{login} con usuario y contraseña.
 
@@ -631,13 +628,13 @@ En la imagen \ref{figura:Grafana} se muestra  el panel principal de la interfaz 
 Uno de los complementos más utilizados de manera conjunta en Grafana es Graphite.
 \textbf{Graphite} ~\cite{Graphite} es una herramienta de monitoreo. Facilita el almacenamiento y visualización de datos de series temporales. Idealmente, Graphite se usa como fuente de datos para el tablero de Grafana en una configuración de monitoreo de datos.
 
-Graphite fue diseñado y escrito originalmente por Chris Davis en Orbitz en 2006 como un proyecto paralelo que finalmente se convirtió en su herramienta de monitoreo fundamental. En 2008, Orbitz permitió que Graphite se lanzara bajo la licencia de código abierto Apache 2.0 . Numerosas empresas grandes han implementado Graphite en la producción, donde les ayuda a monitorear sus servicios de comercio electrónico de producción y planificar el crecimiento.
+Graphite fue diseñado y escrito originalmente por Chris Davis en Orbitz en 2006 como un proyecto paralelo que finalmente se convirtió en su herramienta de monitoreo fundamental. En 2008, Orbitz permitió que Graphite se lanzara bajo la licencia de código abierto Apache 2.0. 
 
 \subsection{Tableau}
 \label{sec:tableau}
 
-Tableau~\cite{Tableau} es un software para el análisis y visualización de datos. Se fundó en 2003 como resultado de un proyecto de ciencias de la computación de Stanford, que tenía como objetivo mejorar el flujo del análisis y poner los datos al alcance de las personas a través de la visualización.  
-Tableau destaca por su facilidad para integrar diferentes tipos de datos y permite la creación de dashboards que simplifican la toma de decisiones a partir de la información generada. Se trata de un programa flexible, ya que puede ser configurado para que trabaje bajo un servidor, en el escritorio o en la nube, visualizando los datos desde el principio. Además, ofrece cientos de conectores nativos para extraer, limpiar y correlacionar fácilmente datos de prácticamente cualquier fuente sin tener que crear un código personalizado.
+\textbf{Tableau}~\cite{Tableau} es un software para el análisis y visualización de datos. Se fundó en 2003 como resultado de un proyecto de ciencias de la computación de Stanford, que tenía como objetivo mejorar el flujo del análisis y poner los datos al alcance de las personas a través de la visualización.  
+Tableau destaca por su facilidad para integrar diferentes tipos de datos y permite la creación de \textit{dashboards} que simplifican la toma de decisiones a partir de la información generada. Se trata de un programa flexible, ya que puede ser configurado para que trabaje bajo un servidor, en el escritorio o en la nube, visualizando los datos desde el principio. Además, ofrece múltiples conectores de forma nativa para extraer, limpiar y correlacionar fácilmente datos de prácticamente cualquier fuente sin tener que crear un código personalizado.
 
 En este proyecto, se han utilizado dos herramientas que ofrece Tableau: Tableau Prep (\ref{figura:Tableau_Prep}) y Tableau Desktop (\ref{figura:Tableau_desktop}). El primero, permite transformar y limpiar los datos mediante un proceso totalmente automático. El segundo, la aplicación principal, lleva a cabo todo el análisis y la creación de visualizaciones. 
 
@@ -666,7 +663,7 @@ En este proyecto, se han utilizado dos herramientas que ofrece Tableau: Tableau 
 Grafana y Tableau son herramientas para el análisis y visualización de datos. 
 
 Por un lado, Grafana es un software de código abierto que fue diseñada para la visualización de series temporales, puede definirse como una "plataforma de observación". 
-Esta herramienta presenta un panel principal (dashboard) que contiene diferentes visualizaciones de datos. Ofrece soporte nativo para una gran variedad de fuentes de datos, como InfluxDB, MySQL, PostgreSQL\ldots, además de integraciones con Prometheus y Graphite, herramientas de monitorización de series temporales. 
+Esta herramienta presenta un panel principal (\textit{dashboard}) que contiene diferentes visualizaciones de datos. Ofrece soporte nativo para una gran variedad de fuentes de datos, como InfluxDB, MySQL, PostgreSQL\ldots, además de integraciones con Prometheus y Graphite, herramientas de monitorización de series temporales. 
 
 Por otro lado, Tableau es un software propietario diseñado principalmente en el marco empresarial. Permite extraer los datos de cualquier fuente, combinarlos y realizar transformaciones para preparar los datos para la visualización. 
 
@@ -794,7 +791,8 @@ def ins_query_maker(keys,cursor,tablename, rowdict,insertJson):
     \end{minted}
 \end{listing}
 
-Una vez procesados los datos, se realiza el posprocesado que referencia otros ficheros \texttt{\emph{nombre\_tabla}\_post.sql} y \texttt{\emph{nombre\_tabla}\_fk.sql} encargados de generar los índices y las referencias (\textit{foreign key}) de las tablas.  
+\clearpage
+Una vez procesados los datos, se realiza el posprocesado que referencia otros ficheros \texttt{\emph{nombre\_tabla}\_post.sql} y \texttt{\emph{nombre\_tabla}\_fk.sql} encargados de generar los índices y las referencias (\textit{foreign key}) de las tablas.
 
 \begin{listing}[t]
     \caption{Fichero para la creación de referencias: \texttt{Comments\_fk.sql}.}{}
@@ -877,7 +875,7 @@ Los \textit{datasets} utilizados en este Trabajo de Fin de Grado han sido extra�
 
 El contenido de los \textit{dataset} esta organizado en varias tablas: 
  \begin{itemize}
-        \item \emph{Badges} - Insignias, es la reputación del usuario en la comunidad de Stack Exchange (oro, plata,bronce\ldots)
+        \item \textbf{\emph{Badges}} - Insignias, es la reputación del usuario en la comunidad de Stack Exchange (oro, plata,bronce\ldots)
         \item \textbf{\emph{Comments}} - Comentarios de la publicación.
         \item \textbf{\emph{Posthistorys}} - Historial de la publicación.
         \item \textbf{\emph{Postlinks}} - Enlaces a la publicación (vinculado/duplicado).
@@ -1547,7 +1545,7 @@ También se puede ampliar la información existente los \textit{datasets}, ya qu
 Podría sería interesante poder comparar los resultados obtenidos con otras herramientas existentes como Splunk o introducir Graphite que permite, entre otras cosas, agregar funciones, combinar series temporales, modificar y/o añadir parámetros.
 
 También sería interesante automatizar la descarga de los datos de forma que siempre se encontrasen actualizadas en las herramientas y tener un seguimiento real-time de las medidas más interesantes de las comunidades de pregunta y respuesta.
-\cleardoublepage
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % GLOSARIO(S) %
